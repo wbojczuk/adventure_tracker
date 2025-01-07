@@ -3,6 +3,11 @@ interface faqType{
     answer: string
 }
 
+interface fishData{
+    isCaught: boolean,
+    id: number
+}
+
 interface fishType{
     isCaught: boolean,
     imgSrc: string,

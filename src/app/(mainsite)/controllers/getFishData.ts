@@ -1,8 +1,6 @@
 export default function getFishData():fishType[]{
     let fishData: fishType[] = []!
-    if(!(localStorage.getItem("fishData") == null)){
-        fishData = JSON.parse(localStorage.getItem("fishData")!)
-    }else{
+    
         fishData = [
             
             {
@@ -296,6 +294,5 @@ export default function getFishData():fishType[]{
 
             
         ]
-    }
     return fishData
 }

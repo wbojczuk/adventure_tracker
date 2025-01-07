@@ -1,12 +1,17 @@
+"use client"
+
+import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
+
 import React, { useEffect, useRef, useState } from 'react'
 import "./allfish.css"
-import saveFishData from '@/app/(mainsite)/controllers/saveFishData'
+import {saveFishUserData} from "@/app/(mainsite)/controllers/fishHelpers"
 import Filter from '../Filter/Filter'
 
-export default function AllFish(props: {fishData: fishType[], setFishData: any}) {
+export default function AllFish(props: {fishData: fishType[], setFishData: any, currentState: string}) {
   const [displayFish, setDisplayFish] = useState(props.fishData)
   const [filteredFish, setFilteredFish] = useState(props.fishData)
   const [selectedFilter, setSelectedFilter] = useState(1)
+  const {isAuthenticated} = useKindeBrowserClient()
 
 
   const fishCards = filteredFish.map((data: fishType)=>{
@@ -26,13 +31,25 @@ export default function AllFish(props: {fishData: fishType[], setFishData: any})
 
   // HELPERS
   function changeIsCaught(id: number){
-    props.fishData.forEach((fish: fishType, i: number)=>{
-      if(fish.id == id){
-        const newFishData = [...props.fishData]
-        newFishData[i].isCaught = !newFishData[i].isCaught
-        saveFishData(newFishData, props.setFishData)
-      }
-    })
+    if(isAuthenticated){
+      props.fishData.forEach((fish: fishType, i: number)=>{
+        if(fish.id == id){
+          const newFishData = [...props.fishData]
+          newFishData[i].isCaught = !newFishData[i].isCaught
+          const saveData = newFishData.map((data, i)=>{
+            return {
+              id: data.id,
+              isCaught: data.isCaught
+            }
+          })
+          props.setFishData(newFishData)
+          saveFishUserData(props.currentState, saveData)
+        }
+      })
+    }else{
+      alert("Please Log In/Sign Up To Save Data")
+    }
+    
   }
 
   useEffect(()=>{
