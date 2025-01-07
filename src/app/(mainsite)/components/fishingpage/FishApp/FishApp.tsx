@@ -12,7 +12,7 @@ export default function FishApp(){
     const {isAuthenticated} = useKindeBrowserClient()
 
     const [fishData, setFishData]= useState([])
-    const [newFishData, setNewFishData]= useState([])
+    const [newFishData, setNewFishData]: [newFishData: fishType[], setNewFishData: any] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [currentState, setCurrentState] = useState("ga")
 
