@@ -1,5 +1,7 @@
 "use client"
 
+
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import "./hamburgers.min.css"
 import styles from "./navbar.module.css"
 import Link from "next/link"
@@ -10,6 +12,7 @@ import NavOption from "./NavOption"
 
 
 export default function Navbar() {
+  const {isAuthenticated} = useKindeBrowserClient()
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOnTouch, setIsOnTouch] = useState(false)
@@ -53,6 +56,8 @@ export default function Navbar() {
       }
     })
   }, [pathname])
+
+  
 
 
   useEffect(()=>{
@@ -224,10 +229,26 @@ links={[
           /> */}
 
           
-          <Link href={""} className={styles.cta}>
+         {(!isAuthenticated) && <>
+         
+          <a href={"/api/auth/login?"} className={styles.cta}>
           <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="M12 12q-1.65 0-2.825-1.175T8 8t1.175-2.825T12 4t2.825 1.175T16 8t-1.175 2.825T12 12m-8 8v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20z"></path></svg>
             <span>Log In</span>
-          </Link>
+          </a>
+          <a href={"/api/auth/register?"} className={styles.cta}>
+          <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="M12 12q-1.65 0-2.825-1.175T8 8t1.175-2.825T12 4t2.825 1.175T16 8t-1.175 2.825T12 12m-8 8v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20z"></path></svg>
+            <span>Register</span>
+          </a>
+         </>}
+
+         {(isAuthenticated) && <>
+          <a href={"/api/auth/logout?"} className={styles.cta}>
+          <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="M5 5v14a1 1 0 0 0 1 1h3v-2H7V6h2V4H6a1 1 0 0 0-1 1m14.242-.97l-8-2A1 1 0 0 0 10 3v18a.998.998 0 0 0 1.242.97l8-2A1 1 0 0 0 20 19V5a1 1 0 0 0-.758-.97M15 12.188a1.001 1.001 0 0 1-2 0v-.377a1 1 0 1 1 2 .001z"></path></svg>
+            <span>Log Out</span>
+          </a>
+         </>
+
+          } 
           
 
           </ul>

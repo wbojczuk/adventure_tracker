@@ -14,6 +14,7 @@ import Script from 'next/script';
 
 // BUTTON STYLES - .main-button
 import "./(mainsite)/components/styling_sheets/links/mainlink.css"
+import { AuthProvider } from './(mainsite)/components/AuthProvider/AuthProvider';
 
 
 const primaryFont = Bungee({ subsets: ['latin'], weight: ["400"], display: "swap", variable: "--primary-font" })
@@ -48,6 +49,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <AuthProvider>
     <html lang="en">
       <body className={`${primaryFont.variable}`}>
 
@@ -62,13 +64,17 @@ export default function RootLayout({
         `}
       </Script></>}
 
-        <Navbar />
+        
 
-        {children}
+          <Navbar />
+
+          {children}
+
 
         {/* <Footer /> */}
         
         </body>
     </html>
+    </AuthProvider>
   )
 }
