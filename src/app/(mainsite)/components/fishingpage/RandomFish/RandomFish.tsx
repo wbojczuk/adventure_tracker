@@ -71,7 +71,7 @@ export default function RandomFish(props: {fishData: fishType[]}) {
 
     <div ref={animationRef} id="animationWrapper">
     <div ref={animationRef2} id="animation">
-    <Lottie
+   {(document) &&  <Lottie
         animationData={anim}
         play={playAnim}
         loop={false}
@@ -80,7 +80,7 @@ export default function RandomFish(props: {fishData: fishType[]}) {
           setPlayAnim(false)
           showCard()
         }}
-        ></Lottie>
+        ></Lottie>}
     </div>
     <div ref={cardRef} className="fish-card" id="chanceCard">
         {/* <img className="status-icon" src={(currentCard.isCaught) ? "/img/complete.svg" : "/img/incomplete.svg"}/> */}
