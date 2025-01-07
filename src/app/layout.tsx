@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import "react-multi-carousel/lib/styles.css";
+import AppProvider from "./(mainsite)/components/misc/AppContext"
 
 // Import Swiper styles
 import 'swiper/css';
@@ -50,6 +51,7 @@ export default function RootLayout({
 }) {
   return (
     <AuthProvider>
+    <AppProvider>
     <html lang="en">
       <body className={`${primaryFont.variable}`}>
 
@@ -75,6 +77,7 @@ export default function RootLayout({
         
         </body>
     </html>
+    </AppProvider>
     </AuthProvider>
   )
 }

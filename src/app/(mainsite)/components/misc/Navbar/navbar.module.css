@@ -18,6 +18,16 @@
     align-items: center;
     justify-content: space-between;
 }
+.syncing{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+}
+.syncing img{
+    height: 2.5vw;
+    object-fit: contain;
+}
 
 .topBarText{
     font-weight: 500;

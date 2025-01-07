@@ -5,14 +5,17 @@ import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import "./hamburgers.min.css"
 import styles from "./navbar.module.css"
 import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, useContext } from "react"
+import { AppContext } from "../AppContext";
 import { usePathname } from "next/navigation"
 import NavMultiOption from "./NavMultiOption"
 import NavOption from "./NavOption"
 
 
+
 export default function Navbar() {
   const {isAuthenticated, getUser} = useKindeBrowserClient()
+  const {isSyncing} = useContext(AppContext)
 
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -162,6 +165,10 @@ export default function Navbar() {
 
       <div ref={topBarRef} className={styles.topBar}>
         <span className={styles.topBarText}>Get out there and explore today!</span>
+
+       {(isSyncing) &&  <span className={styles.syncing}>
+       <img src="/img/syncing.svg" aria-hidden /> <span>Syncing</span> 
+        </span>}
       </div>
 
       <div className={styles.navContent}>

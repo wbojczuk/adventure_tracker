@@ -7,22 +7,29 @@ import { getFishUserData } from '@/app/(mainsite)/controllers/fishHelpers';
 import AllFish from '../AllFish/AllFish';
 import Footer from '../Footer/Footer';
 import getFishData from '@/app/(mainsite)/controllers/getFishData';
+import Loading from '../../misc/Loading/Loading';
+
+
 
 export default function FishApp(){
-    const {isAuthenticated} = useKindeBrowserClient()
+    const {isAuthenticated, isLoading} = useKindeBrowserClient()
+    
+    
 
     const [fishData, setFishData]= useState([])
     const [newFishData, setNewFishData]: [newFishData: fishType[], setNewFishData: any] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const [isAppLoading, setIsAppLoading] = useState(true)
     const [currentState, setCurrentState] = useState("ga")
 
     useEffect(()=>{
-        if(isAuthenticated){
-            mergeData() 
-        }else{
-            //@ts-ignore
-            setNewFishData(getFishData())
-            setIsLoading(false)
+        if(!isLoading){
+            if(isAuthenticated){
+                mergeData() 
+            }else{
+                //@ts-ignore
+                setNewFishData(getFishData())
+                setIsAppLoading(false)
+            }
         }
 
         async function mergeData(){
@@ -35,15 +42,18 @@ export default function FishApp(){
             })
             
             setNewFishData(newData)
-            setIsLoading(false)
+            setIsAppLoading(false)
         }
 
-    }, [isAuthenticated])
+    }, [isLoading])
 
    
 return (
  <div className={styles.fishApp}>
-    {(!isLoading) && <>
+    {(isAppLoading) &&
+    <Loading type='fish' />
+    }
+    {(!isAppLoading) && <>
         <Header fishData={newFishData} /> 
     <AllFish currentState={currentState} setFishData={setNewFishData} fishData={newFishData} />
     <Footer />

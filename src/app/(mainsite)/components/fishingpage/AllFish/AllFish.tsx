@@ -1,7 +1,8 @@
 "use client"
 
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
-
+import { AppContext } from '../../misc/AppContext';
+import { useContext } from "react"
 import React, { useEffect, useRef, useState } from 'react'
 import "./allfish.css"
 import {saveFishUserData} from "@/app/(mainsite)/controllers/fishHelpers"
@@ -12,6 +13,8 @@ export default function AllFish(props: {fishData: fishType[], setFishData: any, 
   const [filteredFish, setFilteredFish] = useState(props.fishData)
   const [selectedFilter, setSelectedFilter] = useState(1)
   const {isAuthenticated} = useKindeBrowserClient()
+  const {setIsSyncing} = useContext(AppContext)
+  
 
 
   const fishCards = filteredFish.map((data: fishType)=>{
@@ -30,7 +33,7 @@ export default function AllFish(props: {fishData: fishType[], setFishData: any, 
 
 
   // HELPERS
-  function changeIsCaught(id: number){
+   function changeIsCaught(id: number){
     if(isAuthenticated){
       props.fishData.forEach((fish: fishType, i: number)=>{
         if(fish.id == id){
@@ -43,14 +46,22 @@ export default function AllFish(props: {fishData: fishType[], setFishData: any, 
             }
           })
           props.setFishData(newFishData)
-          saveFishUserData(props.currentState, saveData)
+          setIt(saveData)
         }
       })
     }else{
       alert("Please Log In/Sign Up To Save Data")
     }
+
+    async function setIt(saveData: any){
+      setIsSyncing(true)
+      await  saveFishUserData(props.currentState, saveData)
+      setIsSyncing(false)
+    }
     
   }
+
+  
 
   useEffect(()=>{
     if(selectedFilter == 0){
