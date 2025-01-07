@@ -16,7 +16,6 @@ export async function GET(req: Request, {params}: {params: { state: string}}){
         const results = await db.collection("users")
         .findOne({_id: user.id}, {projection: {[projectionStr]: 1, _id: 0} })
 
-        console.log(results)
 
         return NextResponse.json(results)
     }catch(err){

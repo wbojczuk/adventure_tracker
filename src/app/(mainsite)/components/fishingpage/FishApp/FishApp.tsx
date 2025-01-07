@@ -36,7 +36,6 @@ export default function FishApp(){
             
             setNewFishData(newData)
             setIsLoading(false)
-            console.log(newData)
         }
 
     }, [isAuthenticated])

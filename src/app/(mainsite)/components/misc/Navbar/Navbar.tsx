@@ -14,7 +14,6 @@ import NavOption from "./NavOption"
 export default function Navbar() {
   const {isAuthenticated, getUser} = useKindeBrowserClient()
 
-  console.log(getUser())
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOnTouch, setIsOnTouch] = useState(false)

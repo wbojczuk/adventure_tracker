@@ -1,11 +1,14 @@
 "use client"
+import dynamic from 'next/dynamic';
 import React, { useRef, useState } from 'react'
 import "./randomfish.css"
 import anim from "./dice.json"
-import Lottie from 'react-lottie-player/dist/LottiePlayerLight'
+
 import gsap from 'gsap'
 
 export default function RandomFish(props: {fishData: fishType[]}) {
+
+  const Lottie = dynamic(() => import('react-lottie-player/dist/LottiePlayerLight'), { ssr: false });
 
   const animationRef: any = useRef()
   const animationRef2: any = useRef()
@@ -71,7 +74,7 @@ export default function RandomFish(props: {fishData: fishType[]}) {
 
     <div ref={animationRef} id="animationWrapper">
     <div ref={animationRef2} id="animation">
-   {(document) &&  <Lottie
+    {(typeof document !== undefined) && <Lottie
         animationData={anim}
         play={playAnim}
         loop={false}
