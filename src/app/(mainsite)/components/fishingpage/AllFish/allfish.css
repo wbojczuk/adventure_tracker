@@ -1,0 +1,117 @@
+#allFish{
+    position: relative;
+    padding-bottom: var(--section-padding-top);
+}
+
+#allFish h1{
+    padding: calc(var(--section-padding-top) * 0.8) 0;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 5rem;
+}
+
+#filterWrapper{
+    margin: 2vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw
+}
+
+.filter{
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    padding: 0.8vw 0;
+    border-radius: 999px;
+    min-width: 15%;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1.8rem;
+}
+
+.filter.active::after{
+     content: '';
+     display: inline-block;
+     position: absolute;
+     top: calc(100% + 10px);
+     left: 10%;
+     width: 80%;
+     height: 8px;
+     background-color: var(--primary-color);
+     border-radius: 999px;
+}
+
+#allFishWrapper{
+    padding: 4vw 10%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 5vw;
+    flex-wrap: wrap;
+}
+
+.status-icon{
+    position: absolute;
+    top: 0.5vw;
+    right:0.5vw;;
+    width: 2.5vw;
+}
+
+.fish-card{
+position: relative;
+ width: 25%;
+ border-radius: 6px;
+ box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.4);
+ padding-bottom: 5vw;
+ background-color: white;
+}
+
+#chanceCard{
+    opacity:0;
+    transform: scale(0);
+    display: none;
+    padding-bottom: 7vw;
+    transition: 0.3s opacity;
+}
+#chanceCard .changestatus{
+    bottom: 2vw;
+}
+
+.fish-img{
+    display: inline-block;
+    width: 80%;
+    margin: 2vw 10% 0  10%;
+    aspect-ratio: 2/1;
+    object-fit: contain;
+    object-position: center;
+}
+
+.fish-card h3{
+    text-align: center;
+    padding: 2vw 10%;
+    font-size: 2rem;
+}
+
+.changestatus{
+    position: absolute;
+    bottom: 1vw;
+    width: 80%;
+    padding: 0.8vw 0;
+    border-radius: 999px;
+    cursor: pointer;
+    left: 10%;
+    font-size: 1.3rem;
+    font-family: var(--primary-font);
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: 100;
+    transition: 0.3s filter;
+}
+
+.changestatus:hover{
+    filter: brightness(180%);
+}

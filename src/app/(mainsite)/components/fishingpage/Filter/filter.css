@@ -1,0 +1,12 @@
+#filterInput{
+    position: relative;
+    padding: 0.8vw 0;
+    border-radius: 999px;
+    width: 15%;
+    background-color: white;
+    text-align: center;
+    /* background-color: var(--secondary-color); */
+    color: black;
+    font-size: 1.8rem;
+    font-family: var(--primary-font);
+}

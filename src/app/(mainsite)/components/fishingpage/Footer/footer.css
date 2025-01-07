@@ -1,0 +1,12 @@
+footer{
+    padding: var(--section-padding-top) 0;
+    text-align: center;
+    color: white;
+    background-color: var(--secondary-color);
+    font-size: 3rem;
+}
+
+footer a{
+    color: white;
+    
+}

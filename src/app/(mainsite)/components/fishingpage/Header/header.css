@@ -1,0 +1,11 @@
+.header{
+    position: relative;
+    padding: calc(var(--section-padding-top) * 1.5) 0;
+}
+
+.header h1{
+    text-align: center;
+    padding: 0 26%;
+    font-size: 5.2rem;
+    color: white
+}
