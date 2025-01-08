@@ -167,7 +167,7 @@ export default function Navbar() {
           display: (isOnMobile && isSyncing) ? "none" : "initial"
         }} className={styles.topBarText}>Get out there and explore today!</span>
 
-       <span className={styles.syncing} style={{opacity: (isSyncing) ? "1" : "0", display: (isOnMobile && !isSyncing) ? "none" : "initial"}}>
+       <span className={styles.syncing} style={{opacity: (isSyncing) ? "1" : "0", display: (isOnMobile && !isSyncing) ? "none" : "inline-flex"}}>
        <img src="/img/syncing.svg" aria-hidden /> <span>Syncing</span> 
         </span>
       </div>

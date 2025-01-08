@@ -58,6 +58,13 @@
     top: 0.5vw;
     right:0.5vw;;
     width: 2.5vw;
+    height: 2.5vw;
+}
+.status-icon.incomplete{
+    color: #C21D03;
+}
+.status-icon.complete{
+    color: #00C308;
 }
 
 .fish-card{
@@ -139,7 +146,9 @@ position: relative;
         top: .8vw;
         right:0.8vw;;
         width: 4vw;
+        height: 4vw;
     }
+    
     
     .fish-card{
      width: 38%;
@@ -195,6 +204,7 @@ position: relative;
         top: 1.2vw;
         right:1.2vw;;
         width: 6vw;
+        height: 6vw;
     }
     
     .fish-card{
