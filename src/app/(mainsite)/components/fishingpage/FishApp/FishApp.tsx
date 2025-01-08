@@ -37,7 +37,7 @@ export default function FishApp(){
             let newData: fishType[] = []
             getFishData().forEach((data, i)=>{
                 const newObj = data;
-                if(userData.fish[currentState]){
+                if(userData.fish && userData.fish[currentState]){
                     data.isCaught = userData.fish[currentState][i].isCaught
                 }
                 newData.push(newObj)
