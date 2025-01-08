@@ -166,15 +166,14 @@ export default function Navbar() {
       <div ref={topBarRef} className={styles.topBar}>
         <span className={styles.topBarText}>Get out there and explore today!</span>
 
-       {(isSyncing) &&  <span className={styles.syncing}>
+       <span className={styles.syncing} style={{opacity: (isSyncing) ? "1" : "0"}}>
        <img src="/img/syncing.svg" aria-hidden /> <span>Syncing</span> 
-        </span>}
+        </span>
       </div>
 
       <div className={styles.navContent}>
       <Link href="/" className={styles.logo}>
         <img src="/img/logo.png" className={styles.logoImg} width={500} height={250} alt="Logo" />
-        {/* <span>logo text</span> */}
       </Link>
 
         

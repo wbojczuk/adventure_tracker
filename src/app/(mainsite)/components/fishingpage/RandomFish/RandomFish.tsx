@@ -85,7 +85,7 @@ export default function RandomFish(props: {fishData: fishType[]}) {
         }}
         ></Lottie>}
     </div>
-    <div ref={cardRef} className="fish-card" id="chanceCard">
+    <div ref={cardRef} className="fish-card random-fish-card" id="chanceCard">
         {/* <img className="status-icon" src={(currentCard.isCaught) ? "/img/complete.svg" : "/img/incomplete.svg"}/> */}
         <img src={currentCard.imgSrc} aria-hidden className="fish-img" />
         <h3>{currentCard.name}</h3>

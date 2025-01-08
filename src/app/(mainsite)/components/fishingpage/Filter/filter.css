@@ -10,3 +10,21 @@
     font-size: 1.8rem;
     font-family: var(--primary-font);
 }
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    #filterInput{
+        padding: 1.2vw 0;
+        width: 18%;
+        font-size: 1.6rem;
+    }
+}
+
+ /* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    #filterInput{
+        padding: 1.8vw 0;
+        width: 33%;
+        font-size: 1.6rem;
+    }
+}

@@ -115,3 +115,110 @@ position: relative;
 .changestatus:hover{
     filter: brightness(180%);
 }
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    #filterWrapper{
+        margin: 3vw 0;
+        gap: 4vw
+    }
+    
+    .filter{
+        padding: 1.2vw 0;
+        width: 18%;
+        font-size: 1.6rem;
+    }
+    
+    #allFishWrapper{
+        padding: 6vw 5%;
+        gap: 5vw;
+    }
+    
+    .status-icon{
+        position: absolute;
+        top: .8vw;
+        right:0.8vw;;
+        width: 4vw;
+    }
+    
+    .fish-card{
+     width: 38%;
+     padding-bottom: 9vw;
+    }
+    
+    
+    .fish-img{
+        margin: 3vw 10% 0 10%;
+    }
+    
+    .fish-card h3{
+        text-align: center;
+        padding: 2vw 10%;
+        font-size: 2rem;
+    }
+    
+    .changestatus{
+        bottom: 2.5vw;
+        width: 85%;
+        padding: 1.2vw 0;
+        left: 7.5%;
+        font-size: 1.3rem;
+    }
+}
+
+ /* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .filter.active::after{
+        top: calc(100% + 4px);
+        height: 5px;
+   }
+   
+    #filterWrapper{
+        flex-wrap: wrap;
+        margin: 4vw 0;
+        gap: 6vw
+    }
+    
+    .filter{
+        padding: 2vw 0;
+        width: 33%;
+        font-size: 1.6rem;
+    }
+    
+    #allFishWrapper{
+        padding: 8vw 2.5%;
+        gap: 4vw;
+    }
+    
+    .status-icon{
+        position: absolute;
+        top: 1.2vw;
+        right:1.2vw;;
+        width: 6vw;
+    }
+    
+    .fish-card{
+     width: 46%;
+     padding-bottom: 20vw;
+    }
+    
+    
+    .fish-img{
+        margin: 3vw 10% 0 10%;
+    }
+    
+    .fish-card h3{
+        text-align: center;
+        padding: 2vw 10%;
+        font-size: 1.6rem;
+        
+    }
+    
+    .changestatus{
+        bottom: 3.4vw;
+        width: 90%;
+        padding: 1vw 0;
+        left: 5%;
+        font-size: 1.5rem;
+    }
+}

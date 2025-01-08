@@ -9,3 +9,28 @@
     font-size: 5.2rem;
     color: white
 }
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .header{
+        position: relative;
+        padding: calc(var(--section-padding-top) * 2.5) 0;
+    }
+    .header h1{
+        padding: 0 15%;
+        font-size: 4rem;
+        color: white
+    }
+}
+
+ /* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .header{
+        position: relative;
+        padding: calc(var(--section-padding-top) * 3.5) 0;
+    }
+    .header h1{
+        padding: 0 5%;
+        font-size: 3.5rem;
+    }
+}
