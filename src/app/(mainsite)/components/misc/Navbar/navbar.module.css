@@ -279,6 +279,9 @@
         pointer-events: none;
     }
     .topBarText{
+        /* display: none; */
+    }
+    .syncing{
         display: none;
     }
     .content{

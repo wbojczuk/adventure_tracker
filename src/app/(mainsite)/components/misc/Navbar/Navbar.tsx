@@ -159,14 +159,15 @@ export default function Navbar() {
         hamburger--vortex
         hamburger--vortex-r */
 
-
   return (
     <nav ref={navRef} className={styles.mainNav}>
 
       <div ref={topBarRef} className={styles.topBar}>
-        <span className={styles.topBarText}>Get out there and explore today!</span>
+        <span style={{
+          display: (isOnMobile && isSyncing) ? "none" : "initial"
+        }} className={styles.topBarText}>Get out there and explore today!</span>
 
-       <span className={styles.syncing} style={{opacity: (isSyncing) ? "1" : "0"}}>
+       <span className={styles.syncing} style={{opacity: (isSyncing) ? "1" : "0", display: (isOnMobile && !isSyncing) ? "none" : "initial"}}>
        <img src="/img/syncing.svg" aria-hidden /> <span>Syncing</span> 
         </span>
       </div>
