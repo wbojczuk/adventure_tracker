@@ -6,7 +6,7 @@ import anim from "./dice.json"
 
 import gsap from 'gsap'
 
-export default function randomNationalPark(props: {nationalParkData: nationalParkType[]}) {
+export default function RandomNationalPark(props: {nationalParkData: nationalParkType[]}) {
 
   const Lottie = dynamic(() => import('react-lottie-player/dist/LottiePlayerLight'), { ssr: false });
 

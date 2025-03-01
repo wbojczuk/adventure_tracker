@@ -18,14 +18,13 @@ export default function AllNationalParks(props: {nationalParksData: nationalPark
 
 
   const nationalParksCards = filteredNationalParks.map((data: nationalParkType)=>{
-    console.log(data)
     return(
       <div className="nationalpark-card">
 
         {(data.isVisited) && <svg className={`status-icon complete`} xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="M14 2a8 8 0 0 0-8 8a8 8 0 0 0 8 8a8 8 0 0 0 8-8a8 8 0 0 0-8-8M4.93 5.82A8.01 8.01 0 0 0 2 12a8 8 0 0 0 8 8c.64 0 1.27-.08 1.88-.23c-1.76-.39-3.38-1.27-4.71-2.48A6 6 0 0 1 4 12c0-.3.03-.59.07-.89C4.03 10.74 4 10.37 4 10c0-1.44.32-2.87.93-4.18m13.16.26L19.5 7.5L13 14l-3.79-3.79l1.42-1.42L13 11.17"></path></svg>}
         {(!data.isVisited) && <svg className={`status-icon incomplete`} xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" d="M14 2a8 8 0 0 0-8 8a8 8 0 0 0 8 8a8 8 0 0 0 8-8a8 8 0 0 0-8-8m0 2c3.32 0 6 2.69 6 6c0 3.32-2.68 6-6 6a6 6 0 0 1-6-6a6 6 0 0 1 6-6M4.93 5.82A8.01 8.01 0 0 0 2 12a8 8 0 0 0 8 8c.64 0 1.27-.08 1.88-.23c-1.76-.39-3.38-1.27-4.71-2.48A6 6 0 0 1 4 12c0-.3.03-.59.07-.89C4.03 10.74 4 10.37 4 10c0-1.44.32-2.87.93-4.18"></path></svg>}
         
-        <img src={data.logo} aria-hidden className="nationalpark-img" />
+        <img src={data.logo} alt={data.name} className="nationalpark-img" />
         
         <button onClick={()=>{
           changeIsVisited(data.id)

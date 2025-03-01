@@ -26,7 +26,7 @@ export default function NationalParksApp(){
                 mergeData() 
             }else{
                 //@ts-ignore
-                setNationalParksData(getNationalParksData())
+                setNewNationalParksData(getNationalParksData())
                 setIsAppLoading(false)
             }
         }

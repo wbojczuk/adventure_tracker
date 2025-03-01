@@ -1,5 +1,6 @@
 "use client"
 import "./header.css"
+import RandomNationalPark from "../RandomNationalPark/RandomNationalPark"
 
 export default function Header(props: {nationalParksData: nationalParkType[]}) {
   return (
@@ -8,7 +9,7 @@ export default function Header(props: {nationalParksData: nationalParkType[]}) {
         <h1>All National Parks Tracker</h1>
 
         <div className="center">
-            {/* <RandomFish fishData={props.fishData} /> */}
+           <RandomNationalPark nationalParkData={props.nationalParksData} />
         </div>
     
         <img src='./img/national-park-header.webp' alt='Image of National Park' className='bg-img' />

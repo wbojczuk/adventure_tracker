@@ -157,7 +157,8 @@ position: relative;
     
     
     .nationalpark-img{
-        margin: 3vw 10% 0 10%;
+        aspect-ratio: 1/.8;
+        margin: 3vw 0 0 0
     }
     
     .nationalpark-card h3{
@@ -209,12 +210,13 @@ position: relative;
     
     .nationalpark-card{
      width: 46%;
-     padding-bottom: 20vw;
+     padding-bottom: 15vw;
     }
     
     
     .nationalpark-img{
-        margin: 3vw 10% 0 10%;
+        aspect-ratio: 1/.9;
+        margin: 3vw 0 0 0;
     }
     
     .nationalpark-card h3{
@@ -229,6 +231,6 @@ position: relative;
         width: 90%;
         padding: 1vw 0;
         left: 5%;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 }
