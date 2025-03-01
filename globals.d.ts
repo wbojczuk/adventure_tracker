@@ -3,6 +3,10 @@ interface faqType{
     answer: string
 }
 
+interface userSettingsType{
+    homeState: string
+}
+
 interface nationalParkType{
     name: string
     state: string

@@ -1,15 +1,20 @@
 "use client"
 import React, { Component } from "react";
+import { getUserSettings } from "../../controllers/userSettingsHelpers";
 // @ts-ignore
 const AppContext = React.createContext();
 
 class AppProvider extends Component {
   state = {
     // collections: [],
-   isSyncing: false
+    isSyncing: false,
+    userSettings: {
+      homeState: ""
+    },
+    settingsLoading: true
   };
   componentDidMount() {
-    
+    this.setUserSettings()
   }
 
   
@@ -18,6 +23,33 @@ class AppProvider extends Component {
    
     this.setState({ isSyncing: syncing });
   }
+  
+  setUserSettings = async () =>{
+
+    // cache
+    let cachedUserSettings = {}
+    if(localStorage.getItem("userSettingsCache")){
+      cachedUserSettings = JSON.parse(localStorage.getItem("userSettingsCache"))
+      this.setState({ userSettings: cachedUserSettings });
+      this.setState({settingsLoading: false})
+    }
+
+    // online query
+    const onlineUserSettings = await getUserSettings()
+
+    if(onlineUserSettings.usersettings.homeState){
+      this.setState({ userSettings: {homeState: onlineUserSettings.usersettings.homeState} });
+    }else{
+      this.setState({ userSettings: {homeState: "GA"} });
+    }
+    this.setState({settingsLoading: false})
+
+    // update local cache store
+
+    localStorage.setItem("userSettingsCache",JSON.stringify(onlineUserSettings.usersettings))
+
+  }
+
 // @ts-ignore
   render() {
     return (

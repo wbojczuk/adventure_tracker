@@ -2,7 +2,6 @@ import { gaFishData } from "../data/fishData"
 
 export default function getFishData(state: string):fishType[]{
     let fishData: fishType[] = []!
-    console.log(state)
     const newState = state.trim().toUpperCase()
     
     switch (newState){
