@@ -11,7 +11,8 @@ import Loading from '../../misc/Loading/Loading';
 
 
 
-export default function FishApp(){
+export default function FishApp({currentState}: {currentState: string}){
+
     const {isAuthenticated, isLoading} = useKindeBrowserClient()
     
     
@@ -19,7 +20,7 @@ export default function FishApp(){
     const [fishData, setFishData]= useState([])
     const [newFishData, setNewFishData]: [newFishData: fishType[], setNewFishData: any] = useState([])
     const [isAppLoading, setIsAppLoading] = useState(true)
-    const [currentState, setCurrentState] = useState("ga")
+    
 
     useEffect(()=>{
         if(!isLoading){
@@ -27,15 +28,16 @@ export default function FishApp(){
                 mergeData() 
             }else{
                 //@ts-ignore
-                setNewFishData(getFishData())
+                setNewFishData(getFishData(currentState))
                 setIsAppLoading(false)
             }
         }
 
         async function mergeData(){
+            
             const userData = await getFishUserData(currentState);
             let newData: fishType[] = []
-            getFishData().forEach((data, i)=>{
+            getFishData(currentState).forEach((data, i)=>{
                 const newObj = data;
                 if(userData && userData.hasOwnProperty("fish") && userData.fish.hasOwnProperty(currentState)){
                     data.isCaught = userData.fish[currentState][i].isCaught
@@ -56,7 +58,7 @@ return (
     <Loading type='fish' />
     }
     {(!isAppLoading) && <>
-        <Header fishData={newFishData} /> 
+        <Header state={currentState} fishData={newFishData} /> 
     <AllFish currentState={currentState} setFishData={setNewFishData} fishData={newFishData} />
     <Footer />
     </>}

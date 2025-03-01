@@ -55,7 +55,7 @@ export default function NationalParksApp(){
 return (
  <div className={styles.fishApp}>
     {(isAppLoading) &&
-    <Loading type='nationalpark' />
+    <Loading type='parks' />
     }
     {(!isAppLoading) && <>
         <Header nationalParksData={newNationalParksData} /> 

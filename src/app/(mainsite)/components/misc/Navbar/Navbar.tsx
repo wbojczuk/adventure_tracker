@@ -219,7 +219,7 @@ ref={servicesRef}
 title="Fish Tracker"
 links={[
   {
-    url: "/",
+    url: "/fishing/ga",
     title: "Georgia"
   }
 ]}

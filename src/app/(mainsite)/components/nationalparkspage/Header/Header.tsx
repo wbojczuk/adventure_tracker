@@ -12,7 +12,7 @@ export default function Header(props: {nationalParksData: nationalParkType[]}) {
            <RandomNationalPark nationalParkData={props.nationalParksData} />
         </div>
     
-        <img src='./img/national-park-header.webp' alt='Image of National Park' className='bg-img' />
+        <img src='./img/headers/national-park-header.webp' alt='Image of National Park' className='bg-img' />
         <div className='shader'></div>
     </header>
   )

@@ -1,11 +1,9 @@
 "use client"
 
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import "./loading.css"
 
-import dynamic from "next/dynamic";
-
-import fishAnim from "./anim/fish.json"
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 
 interface loadingProps{
   type: string
@@ -14,18 +12,21 @@ interface loadingProps{
 
 
 export default function Loading(props: loadingProps) {
-  const Lottie = dynamic(() => import('react-lottie-player/dist/LottiePlayerLight'), { ssr: false });
     const wrapperElem: any = useRef();
 
     let loadingAnim
 
     switch(props.type){
       case "fish":
-        loadingAnim = fishAnim
+        loadingAnim = "/loading/fish.lottie"
+      break;
+
+      case "parks":
+        loadingAnim = "/loading/parks.lottie"
       break;
 
       default:
-        loadingAnim = fishAnim
+        loadingAnim =  "/loading/fish.lottie"
     }
 
   return (
@@ -35,11 +36,7 @@ export default function Loading(props: loadingProps) {
     style={{display: "inline-flex"}}
     id="messageSuccess">
         <div id="messageSuccessWrapper">
-            <Lottie
-            animationData={loadingAnim}
-            play={true}
-            loop={true}
-            ></Lottie>
+           <DotLottieReact autoplay loop src={loadingAnim}></DotLottieReact>
         </div>
     </div>
     </>
