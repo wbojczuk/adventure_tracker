@@ -115,8 +115,9 @@
     object-position: center;
 }
 
-.links svg path{
-    fill: var(--secondary-text-color);
+.links svg{
+    color: var(--secondary-text-color);
+    transition: 0.3s color;
 }
 
 .links span{
@@ -156,8 +157,8 @@
     background-color: var(--primary-color);
 }
 
-.navLink:hover li span{
-    color: var(--primary-color);
+.navLink:hover li span, .navLink:hover li svg{
+    color: var(--primary-color) !important;
 }
 
 .dropdownLink{

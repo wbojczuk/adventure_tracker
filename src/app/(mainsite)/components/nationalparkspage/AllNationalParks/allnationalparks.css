@@ -1,0 +1,234 @@
+#allNationalParks{
+    position: relative;
+    padding-bottom: var(--section-padding-top);
+}
+
+#allNationalParks h1{
+    padding: calc(var(--section-padding-top) * 0.8) 0;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 5rem;
+}
+
+#filterWrapper{
+    margin: 2vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw
+}
+
+.filter{
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    padding: 0.8vw 0;
+    border-radius: 999px;
+    min-width: 15%;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1.8rem;
+}
+
+.filter.active::after{
+     content: '';
+     display: inline-block;
+     position: absolute;
+     top: calc(100% + 10px);
+     left: 10%;
+     width: 80%;
+     height: 8px;
+     background-color: var(--primary-color);
+     border-radius: 999px;
+}
+
+#allNationalParksWrapper{
+    padding: 4vw 10%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 5vw;
+    flex-wrap: wrap;
+}
+
+.status-icon{
+    position: absolute;
+    top: 0.5vw;
+    right:0.5vw;;
+    width: 2.5vw;
+    height: 2.5vw;
+}
+.status-icon.incomplete{
+    color: #C21D03;
+}
+.status-icon.complete{
+    color: #00C308;
+}
+
+.nationalpark-card{
+position: relative;
+ width: 25%;
+ border-radius: 6px;
+ box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.4);
+ padding-bottom: 5vw;
+ background-color: white;
+}
+
+#chanceCard{
+    opacity:0;
+    transform: scale(0);
+    display: none;
+    padding-bottom: 7vw;
+    transition: 0.3s opacity;
+}
+#chanceCard .changestatus{
+    bottom: 2vw;
+}
+
+.nationalpark-img{
+    display: inline-block;
+    width: 100%;
+    margin: 2vw 0 0 0;
+    aspect-ratio: 1.4/1;
+    object-fit: contain;
+    object-position: center;
+}
+
+.nationalpark-card h3{
+    text-align: center;
+    padding: 2vw 10%;
+    font-size: 2rem;
+}
+
+.changestatus{
+    position: absolute;
+    bottom: 1vw;
+    width: 80%;
+    padding: 0.8vw 0;
+    border-radius: 999px;
+    cursor: pointer;
+    left: 10%;
+    font-size: 1.3rem;
+    font-family: var(--primary-font);
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: 100;
+    transition: 0.3s filter;
+}
+
+.changestatus:hover{
+    filter: brightness(180%);
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    #filterWrapper{
+        margin: 3vw 0;
+        gap: 4vw
+    }
+    
+    .filter{
+        padding: 1.2vw 0;
+        width: 18%;
+        font-size: 1.6rem;
+    }
+    
+    #allNationalParksWrapper{
+        padding: 6vw 5%;
+        gap: 5vw;
+    }
+    
+    .status-icon{
+        position: absolute;
+        top: .8vw;
+        right:0.8vw;;
+        width: 4vw;
+        height: 4vw;
+    }
+    
+    
+    .nationalpark-card{
+     width: 38%;
+     padding-bottom: 9vw;
+    }
+    
+    
+    .nationalpark-img{
+        margin: 3vw 10% 0 10%;
+    }
+    
+    .nationalpark-card h3{
+        text-align: center;
+        padding: 2vw 10%;
+        font-size: 2rem;
+    }
+    
+    .changestatus{
+        bottom: 2.5vw;
+        width: 85%;
+        padding: 1.2vw 0;
+        left: 7.5%;
+        font-size: 1.3rem;
+    }
+}
+
+ /* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .filter.active::after{
+        top: calc(100% + 4px);
+        height: 5px;
+   }
+   
+    #filterWrapper{
+        flex-wrap: wrap;
+        margin: 4vw 0;
+        gap: 6vw
+    }
+    
+    .filter{
+        padding: 2vw 0;
+        width: 33%;
+        font-size: 1.6rem;
+    }
+    
+    #allNationalParksWrapper{
+        padding: 8vw 2.5%;
+        gap: 4vw;
+    }
+    
+    .status-icon{
+        position: absolute;
+        top: 1.2vw;
+        right:1.2vw;;
+        width: 6vw;
+        height: 6vw;
+    }
+    
+    .nationalpark-card{
+     width: 46%;
+     padding-bottom: 20vw;
+    }
+    
+    
+    .nationalpark-img{
+        margin: 3vw 10% 0 10%;
+    }
+    
+    .nationalpark-card h3{
+        text-align: center;
+        padding: 2vw 10%;
+        font-size: 1.6rem;
+        
+    }
+    
+    .changestatus{
+        bottom: 3.4vw;
+        width: 90%;
+        padding: 1vw 0;
+        left: 5%;
+        font-size: 1.5rem;
+    }
+}

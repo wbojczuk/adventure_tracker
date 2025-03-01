@@ -31,6 +31,7 @@ export default function Navbar() {
   const contactRef: any = useRef()
   const reviewsRef: any = useRef()
   const servicesRef: any = useRef()
+  const nationalParksRef: any = useRef()
 
   const hamburgerRef: any = useRef()
   const contentRef: any = useRef()
@@ -45,6 +46,10 @@ export default function Navbar() {
     {
       triggers: ["/", "/home"],
       ref: homeRef
+    },
+    {
+      triggers: ["/national-parks"],
+      ref: nationalParksRef
     }
     
   ]
@@ -196,8 +201,15 @@ export default function Navbar() {
 <NavOption
           title="Home"
           url="/"
-          icon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z"></path></svg>}
+          icon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z"></path></svg>}
           ref={homeRef}
+          />
+          
+          <NavOption
+          title="National Parks"
+          url="/national-parks"
+          icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M13.95 22h-3.9v-4H3l4-6H5l7-10l7 10h-2l4 6h-7.05z"/></svg>}
+          ref={nationalParksRef}
           />
 
 
@@ -218,7 +230,7 @@ links={[
           <NavOption
           title="About Us"
           url="/about"
-          icon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg>}
+          icon={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path></svg>}
           ref={aboutRef}
           />
 

@@ -1,0 +1,23 @@
+.fishApp{
+    position: relative;
+    /* padding: var(--section-padding-top) 0; */
+    z-index: 0;
+    min-height: 90vh;
+    background-color: rgba(148, 239, 255, 0.2);
+}
+
+
+/* SMALL LAPTOP STYLES */
+@media only screen and (min-width: 991px) and (max-width: 1400px){
+
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+
+}
+
+ /* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+
+}

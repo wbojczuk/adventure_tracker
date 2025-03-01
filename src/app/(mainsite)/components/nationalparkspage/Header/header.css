@@ -1,0 +1,36 @@
+.national-park-header{
+    position: relative;
+    padding: calc(var(--section-padding-top) * 2) 0;
+}
+
+.national-park-header h1{
+    text-align: center;
+    padding: 0 26%;
+    font-size: 5.2rem;
+    color: white
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .national-park-header{
+        position: relative;
+        padding: calc(var(--section-padding-top) * 2.5) 0;
+    }
+    .national-park-header h1{
+        padding: 0 15%;
+        font-size: 4rem;
+        color: white
+    }
+}
+
+ /* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .national-park-header{
+        position: relative;
+        padding: calc(var(--section-padding-top) * 3.5) 0;
+    }
+    .national-park-header h1{
+        padding: 0 5%;
+        font-size: 3.5rem;
+    }
+}

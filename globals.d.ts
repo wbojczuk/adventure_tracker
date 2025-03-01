@@ -3,6 +3,14 @@ interface faqType{
     answer: string
 }
 
+interface nationalParkType{
+    name: string
+    state: string
+    isVisited: boolean
+    logo: string,
+    id: number
+}
+
 interface fishData{
     isCaught: boolean,
     id: number
