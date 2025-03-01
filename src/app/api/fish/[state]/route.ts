@@ -47,7 +47,8 @@ export async function PUT(req: Request, {params}: {params: { state: string}}){
             
             await db.collection("users").updateOne(
             {_id: user.id},
-            {$set: {[routeStr]: updatedFishData}})
+            {$set: {[routeStr]: updatedFishData}},
+        {upsert: true})
             return NextResponse.json({data: "Success"}, {status: 200})
         }catch(err){
             return NextResponse.json({error: err}, {status: 500})
