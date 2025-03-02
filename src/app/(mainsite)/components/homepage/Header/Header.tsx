@@ -3,19 +3,26 @@
 import styles from './header.module.css';
 import { AppContext } from '../../misc/AppContext';
 import { useContext, useEffect } from 'react';
+import QuoteOfTheDay from '../QuoteOfTheDay/QuoteOfTheDay';
 export default function Header(){
-    const {userSettings, settingsLoading} = useContext(AppContext)
+    // const {userSettings, settingsLoading} = useContext(AppContext)
     
-    useEffect(()=>{
-        console.log(userSettings)
-    }, [userSettings])
+    // useEffect(()=>{
+    //     console.log(userSettings)
+    // }, [userSettings])
 return (
  <header className={styles.header}>
 
-   <div className={styles.leftContainer}>
-    <h2>Hey There!</h2>
-    <h3>Let's Explore</h3>
-    {/* {(!settingsLoading) && <span>Based in {userSettings.homeState}</span>} */}
+   <div className={styles.containers}>
+        <div className={styles.leftContainer}>
+            <h2>Hey There!</h2>
+            <h3>Let's Explore</h3>
+            {/* {(!settingsLoading) && <span>Based in {userSettings.homeState}</span>} */}
+        </div>
+
+        <div className={styles.rightContainer}>
+                <QuoteOfTheDay />
+        </div>
    </div>
  
     <img src='/img/headers/home-header.webp' alt='Image of outdoors' className='bg-img' />

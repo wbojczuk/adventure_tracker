@@ -14,7 +14,7 @@ class AppProvider extends Component {
     settingsLoading: true
   };
   componentDidMount() {
-    this.setUserSettings()
+    // this.setUserSettings()
   }
 
   
