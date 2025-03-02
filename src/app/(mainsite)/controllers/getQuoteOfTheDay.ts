@@ -6,6 +6,7 @@ export default async function getQuoteOfTheDay(){
         })
 
         const results = await fetchData.json()
+        console.log(results)
         return results
     
     }catch(err){
