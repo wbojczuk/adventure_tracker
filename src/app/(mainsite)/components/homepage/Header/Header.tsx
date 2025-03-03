@@ -3,7 +3,7 @@
 import styles from './header.module.css';
 import { AppContext } from '../../misc/AppContext';
 import { useContext, useEffect } from 'react';
-import QuoteOfTheDay from '../QuoteOfTheDay/QuoteOfTheDay';
+import RandomHint from '../RandomHint/RandomHint';
 export default function Header(){
     // const {userSettings, settingsLoading} = useContext(AppContext)
     
@@ -21,7 +21,7 @@ return (
         </div>
 
         <div className={styles.rightContainer}>
-                <QuoteOfTheDay />
+                <RandomHint />
         </div>
    </div>
  
