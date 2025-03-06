@@ -3,7 +3,7 @@ import { NextResponse } from "next/server"
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
 import typeChecker from "@/app/lib/typechecker"
 
-export async function GET(req: Request, {params}: {params: { state: string}}){
+export async function GET(req: Request){
     const {getUser} = getKindeServerSession()
     const user = await getUser()
     
@@ -12,7 +12,7 @@ export async function GET(req: Request, {params}: {params: { state: string}}){
         const client = await clientPromise
         const db = client.db("adventure_tracker")
 
-        const projectionStr = `fish.${params.state}`
+        const projectionStr = `fish`
 
         const results = await db.collection("users")
         .findOne({_id: user.id}, {projection: {[projectionStr]: 1, _id: 0} })

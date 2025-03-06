@@ -29,7 +29,7 @@ class AppProvider extends Component {
 
   initUserData = async () =>{
     
-    const data = await getFishUserData("ga")
+    const data = await getFishUserData()
     console.log(data)
   }
 

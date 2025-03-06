@@ -1,9 +1,9 @@
 
 
-async function getFishUserData(state: string){
+async function getFishUserData(state?: string){
     
     try{
-        const fetchData = await fetch(`/api/fish/${state}`, {
+        const fetchData = await fetch(`/api/fish${(state != undefined) ? `/${state}` : ""}`, {
             method: "GET",
             cache: "no-store"
         })
