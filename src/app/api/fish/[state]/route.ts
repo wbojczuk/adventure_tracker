@@ -6,10 +6,12 @@ import typeChecker from "@/app/lib/typechecker"
 export async function GET(req: Request, {params}: {params: { state: string}}){
     const {getUser} = getKindeServerSession()
     const user = await getUser()
+    
 
     try{
         const client = await clientPromise
         const db = client.db("adventure_tracker")
+        console.log("HEY")
 
         const projectionStr = `fish.${params.state}`
 

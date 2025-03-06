@@ -7,9 +7,9 @@ import RandomHint from '../RandomHint/RandomHint';
 export default function Header(){
     // const {userSettings, settingsLoading} = useContext(AppContext)
     
-    // useEffect(()=>{
-    //     console.log(userSettings)
-    // }, [userSettings])
+    useEffect(()=>{
+      
+    }, [])
 return (
  <header className={styles.header}>
 

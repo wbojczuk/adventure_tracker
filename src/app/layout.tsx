@@ -16,6 +16,7 @@ import Script from 'next/script';
 // BUTTON STYLES - .main-button
 import "./(mainsite)/components/styling_sheets/links/mainlink.css"
 import { AuthProvider } from './(mainsite)/components/AuthProvider/AuthProvider';
+import App from './(mainsite)/components/misc/App/App';
 
 
 const primaryFont = Bungee({ subsets: ['latin'], weight: ["400"], display: "swap", variable: "--primary-font" })
@@ -66,11 +67,14 @@ export default function RootLayout({
         `}
       </Script></>}
 
-        
-
+        <App children={<>
           <Navbar />
-
           {children}
+          </>}/>
+
+          
+
+          
 
 
         {/* <Footer /> */}

@@ -1,6 +1,7 @@
 "use client"
 import React, { Component } from "react";
 import { getUserSettings } from "../../controllers/userSettingsHelpers";
+import { getFishUserData } from "../../controllers/fishHelpers";
 // @ts-ignore
 const AppContext = React.createContext();
 
@@ -11,7 +12,8 @@ class AppProvider extends Component {
     userSettings: {
       homeState: ""
     },
-    settingsLoading: true
+    settingsLoading: true,
+    userFishData: []
   };
   componentDidMount() {
     // this.setUserSettings()
@@ -22,6 +24,17 @@ class AppProvider extends Component {
   setIsSyncing = (syncing) => {
    
     this.setState({ isSyncing: syncing });
+  }
+
+
+  initUserData = async () =>{
+    
+    const data = await getFishUserData("ga")
+    console.log(data)
+  }
+
+  setFishData =  (data) =>{
+    this.setState({ fishData: data });
   }
   
   setUserSettings = async () =>{
@@ -56,7 +69,8 @@ class AppProvider extends Component {
       <AppContext.Provider
               value={{
           ...this.state,
-         setIsSyncing: this.setIsSyncing
+         setIsSyncing: this.setIsSyncing,
+         initUserData: this.initUserData
         }}
       >
         {this.props.children}
