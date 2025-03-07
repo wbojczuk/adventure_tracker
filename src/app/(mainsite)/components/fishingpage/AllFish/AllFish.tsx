@@ -8,12 +8,12 @@ import "./allfish.css"
 import {saveFishUserData} from "@/app/(mainsite)/controllers/fishHelpers"
 import Filter from '../Filter/Filter'
 
-export default function AllFish(props: {fishData: fishType[], setFishData: any, currentState: string}) {
+export default function AllFish(props: {fishData: fishType[], currentState: string}) {
   const [displayFish, setDisplayFish] = useState(props.fishData)
   const [filteredFish, setFilteredFish] = useState(props.fishData)
   const [selectedFilter, setSelectedFilter] = useState(1)
   const {isAuthenticated} = useKindeBrowserClient()
-  const {setIsSyncing} = useContext(AppContext)
+  const {setIsSyncing, changeFishIsCaught, mergedFishData, fishUserData} = useContext(AppContext)
   
 
 
@@ -38,35 +38,37 @@ export default function AllFish(props: {fishData: fishType[], setFishData: any, 
   // HELPERS
    function changeIsCaught(id: number){
     if(isAuthenticated){
-      props.fishData.forEach((fish: fishType, i: number)=>{
-        if(fish.id == id){
-          const newFishData = [...props.fishData]
-          newFishData[i].isCaught = !newFishData[i].isCaught
-          const saveData = newFishData.map((data, i)=>{
-            return {
-              id: data.id,
-              isCaught: data.isCaught
-            }
-          })
-          props.setFishData(newFishData)
-          setIt(saveData)
-        }
-      })
+      // props.fishData.forEach((fish: fishType, i: number)=>{
+      //   if(fish.id == id){
+      //     const newFishData = [...props.fishData]
+      //     newFishData[i].isCaught = !newFishData[i].isCaught
+      //     const saveData = newFishData.map((data, i)=>{
+      //       return {
+      //         id: data.id,
+      //         isCaught: data.isCaught
+      //       }
+      //     })
+      //     props.setFishData(newFishData)
+          // setIt(saveData)
+      //   }
+      // })
+      changeFishIsCaught(props.currentState, id)
     }else{
       alert("Please Log In/Sign Up To Save Data")
     }
 
-    async function setIt(saveData: any){
-      setIsSyncing(true)
-      await  saveFishUserData(props.currentState, saveData)
-      setIsSyncing(false)
-    }
+    // async function setIt(saveData: any){
+    //   setIsSyncing(true)
+    //   await  saveFishUserData(props.currentState, saveData)
+    //   setIsSyncing(false)
+    // }
     
   }
 
   
 
   useEffect(()=>{
+    
     if(selectedFilter == 0){
       setDisplayFish(props.fishData)
 

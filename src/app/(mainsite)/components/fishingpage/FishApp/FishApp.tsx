@@ -1,6 +1,7 @@
 "use client"
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { AppContext } from '../../misc/AppContext';
 import Header from '../Header/Header';
 import styles from './fishapp.module.css';
 import { getFishUserData } from '@/app/(mainsite)/controllers/fishHelpers';
@@ -14,6 +15,7 @@ import Loading from '../../misc/Loading/Loading';
 export default function FishApp({currentState}: {currentState: string}){
 
     const {isAuthenticated, isLoading} = useKindeBrowserClient()
+    const {setIsSyncing, changeFishIsCaught, mergedFishData, fishUserData} = useContext(AppContext)
     
     
 
@@ -25,7 +27,7 @@ export default function FishApp({currentState}: {currentState: string}){
     useEffect(()=>{
         if(!isLoading){
             if(isAuthenticated){
-                mergeData() 
+                setData() 
             }else{
                 //@ts-ignore
                 setNewFishData(getFishData(currentState))
@@ -33,23 +35,26 @@ export default function FishApp({currentState}: {currentState: string}){
             }
         }
 
-        async function mergeData(){
+        async function setData(){
             
-            const userData = await getFishUserData(currentState);
-            let newData: fishType[] = []
-            getFishData(currentState).forEach((data, i)=>{
-                const newObj = data;
-                if(userData && userData.hasOwnProperty("fish") && userData.fish.hasOwnProperty(currentState)){
-                    data.isCaught = userData.fish[currentState][i].isCaught
-                }
-                newData.push(newObj)
-            })
-            
-            setNewFishData(newData)
+            if(mergedFishData != null){
+                setNewFishData(mergedFishData[`${currentState}`])
+                
+                
+            }else{
+                setNewFishData(getFishData(currentState))
+            }
             setIsAppLoading(false)
+            
         }
 
-    }, [isLoading])
+        console.log("HEY")
+
+    }, [isLoading, mergedFishData,fishUserData])
+
+    useEffect(()=>{
+        console.log(fishUserData)
+    }, [mergedFishData, fishUserData])
 
    
 return (
@@ -59,7 +64,7 @@ return (
     }
     {(!isAppLoading) && <>
         <Header state={currentState} fishData={newFishData} /> 
-    <AllFish currentState={currentState} setFishData={setNewFishData} fishData={newFishData} />
+    <AllFish currentState={currentState} fishData={newFishData} />
     <Footer />
     </>}
  </div>
