@@ -13,7 +13,7 @@ export default function AllNationalParks(props: {nationalParksData: nationalPark
   const [filteredNationalParks, setFilteredNationalParks] = useState(props.nationalParksData)
   const [selectedFilter, setSelectedFilter] = useState(1)
   const {isAuthenticated} = useKindeBrowserClient()
-  const {setIsSyncing} = useContext(AppContext)
+  const {setIsSyncing, changeNationalParkIsVisited} = useContext(AppContext)
   
 
 
@@ -37,28 +37,9 @@ export default function AllNationalParks(props: {nationalParksData: nationalPark
   // HELPERS
    function changeIsVisited(id: number){
     if(isAuthenticated){
-      props.nationalParksData.forEach((nationalPark: nationalParkType, i: number)=>{
-        if(nationalPark.id == id){
-          const newNationalParksData = [...props.nationalParksData]
-          newNationalParksData[i].isVisited = !newNationalParksData[i].isVisited
-          const saveData = newNationalParksData.map((data, i)=>{
-            return {
-              id: data.id,
-              isVisited: data.isVisited
-            }
-          })
-          props.setNationalParksData(newNationalParksData)
-          setIt(saveData)
-        }
-      })
+      changeNationalParkIsVisited(id)
     }else{
       alert("Please Log In/Sign Up To Save Data")
-    }
-
-    async function setIt(saveData: any){
-      setIsSyncing(true)
-      await  saveNationalParksUserData(saveData)
-      setIsSyncing(false)
     }
     
   }

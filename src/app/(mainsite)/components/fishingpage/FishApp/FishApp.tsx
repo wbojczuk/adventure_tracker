@@ -48,13 +48,7 @@ export default function FishApp({currentState}: {currentState: string}){
             
         }
 
-        console.log("HEY")
-
     }, [isLoading, mergedFishData,fishUserData])
-
-    useEffect(()=>{
-        console.log(fishUserData)
-    }, [mergedFishData, fishUserData])
 
    
 return (

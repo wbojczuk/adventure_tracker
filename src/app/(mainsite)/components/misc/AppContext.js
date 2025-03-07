@@ -4,6 +4,8 @@ import { getUserSettings } from "../../controllers/userSettingsHelpers";
 import saveFishUserData, { getFishUserData } from "../../controllers/fishHelpers";
 import getFishData from "../../controllers/getFishData";
 import { Hubballi } from "next/font/google";
+import saveNationalParksUserData, { getNationalParksUserData } from "../../controllers/nationalParksHelpers";
+import getNationalParksData from "../../controllers/getNationalParksData";
 // @ts-ignore
 const AppContext = React.createContext();
 
@@ -16,8 +18,12 @@ class AppProvider extends Component {
     
     isSyncing: false,
     settingsLoading: true,
+    
     fishUserData: null,
-    mergedFishData: null
+    mergedFishData: null,
+
+    nationalParksUserData: null,
+    mergedNationalParksData: null,
   };
   componentDidMount() {
 
@@ -44,12 +50,30 @@ class AppProvider extends Component {
     })
   return mergedData
 }
+mergeNationalParksData = (nationalParksUserData)=>{
+  const localData = getNationalParksData().sort((a, b) => a.id - b.id)
+
+  const userData = nationalParksUserData.sort((a, b) => a.id - b.id)
+
+  const mergedData = localData.map((dataObj, i)=>{
+    let retVal
+    if(dataObj.id == userData[i].id){
+      retVal = {...dataObj, ...userData[i]}
+    }
+    return retVal
+  })
+return mergedData
+}
+
+
 
 changeFishIsCaught = async (state, id)=>{
   this.setIsSyncing(true)
 
   const newData = ( this.state.fishUserData != null) ? this.state.fishUserData[`${state}`] : getFishData(state).map((data) => {return({isCaught: data.isCaught, id: data.id})})
+
   const newUserData = {...this.state.fishUserData}
+
   newUserData[`${state}`] = newData
 
   const newMergedData = ( this.state.mergedFishData != null) ? this.state.mergedFishData : {[`${state}`]: getFishData(state)}
@@ -67,6 +91,32 @@ changeFishIsCaught = async (state, id)=>{
   this.setState({fishUserData: newUserData})
   this.setState({mergedFishData: newMergedData})
   await saveFishUserData(state, newData)
+  this.setIsSyncing(false)
+}
+
+
+changeNationalParkIsVisited = async (id)=>{
+  this.setIsSyncing(true)
+
+  const newData = ( this.state.nationalParksUserData != null) ? this.state.nationalParksUserData : getNationalParksData().map((data) => {return({isVisited: data.isVisited, id: data.id})})
+
+  // newUserData[`${state}`] = newData
+
+  // const newMergedData = ( this.state.mergedNationalParksData != null) ? this.state.mergedNationalParksData :  getNationalParksData()
+
+  
+
+  newData.forEach((data, i)=>{
+    if(data.id == id){
+      data.isVisited = !data.isVisited
+    }
+  })
+  
+  const newMergedData = this.mergeNationalParksData(newData)
+  
+  this.setState({nationalParksUserData: newData})
+  this.setState({mergedNationalParksData: newMergedData})
+  await saveNationalParksUserData(newData)
   this.setIsSyncing(false)
 }
 
@@ -94,6 +144,21 @@ changeFishIsCaught = async (state, id)=>{
     }
 
     // END INIT FISH
+
+    // INIT NATIONAL PARKS
+
+    const tempNationalParksUserData = await getNationalParksUserData()
+    
+    if(tempNationalParksUserData.nationalparks && tempNationalParksUserData.nationalparks.length > 0){
+
+      this.setState({nationalParksUserData: tempNationalParksUserData.nationalparks})
+
+      const mergedData = this.mergeNationalParksData(tempNationalParksUserData.nationalparks)
+
+      this.setState({mergedNationalParksData: mergedData})
+    }
+
+    // END INIT NATIONAL PARKS
     
   }
 
@@ -133,7 +198,8 @@ changeFishIsCaught = async (state, id)=>{
           ...this.state,
          setIsSyncing: this.setIsSyncing,
          initUserData: this.initUserData,
-         changeFishIsCaught: this.changeFishIsCaught
+         changeFishIsCaught: this.changeFishIsCaught,
+         changeNationalParkIsVisited: this.changeNationalParkIsVisited
         }}
       >
         {this.props.children}
