@@ -6,7 +6,7 @@ const hikeData: hikeType[] = [
     difficulty: 6,
     lat: 34.7427, 
     long: -83.3965,
-    state: "GA",
+    state: "AL",
     id: 0,
     isHiked:false,
     name: "Tallulah Gorge State Park"

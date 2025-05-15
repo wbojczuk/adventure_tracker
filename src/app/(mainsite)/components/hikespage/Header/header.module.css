@@ -3,3 +3,7 @@
     width: var(--size);
     height: calc(var(--size) * 0.5);
 }
+
+.header{
+    padding: calc(var(--section-padding-top) * 3) 0;
+}

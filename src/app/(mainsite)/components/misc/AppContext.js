@@ -6,6 +6,8 @@ import getFishData from "../../controllers/getFishData";
 import { Hubballi } from "next/font/google";
 import saveNationalParksUserData, { getNationalParksUserData } from "../../controllers/nationalParksHelpers";
 import getNationalParksData from "../../controllers/getNationalParksData";
+import { hikeData } from "../../data/hikeData";
+import saveHikesUserData from "../../controllers/hikesHelpers";
 // @ts-ignore
 const AppContext = React.createContext();
 
@@ -15,6 +17,10 @@ class AppProvider extends Component {
     // userSettings: {
     //   homeState: ""
     // },
+
+    isHikePaneVisible: false,
+    hikeUserData: null,
+    mergedHikeData: null,
     
     isSyncing: false,
     settingsLoading: true,
@@ -28,11 +34,105 @@ class AppProvider extends Component {
   componentDidMount() {
 
   }
+  initUserData = async () =>{
 
+    // INIT FISH
+    
+    const tempFishData = await getFishUserData()
+    
+    if(tempFishData && tempFishData.hasOwnProperty("fish")){
+
+      this.setState({fishUserData: tempFishData.fish})
+
+      
+
+      const fishStates = Object.getOwnPropertyNames(tempFishData.fish);
+
+      const mergedData = {}
+      fishStates.forEach((state)=>{
+        mergedData[`${state}`] = this.mergeFishData(state, tempFishData.fish[`${state}`])
+      })
+
+      this.setState({mergedFishData: mergedData})
+    }
+
+    // END INIT FISH
+
+    // INIT NATIONAL PARKS
+
+    const tempNationalParksUserData = await getNationalParksUserData()
+    
+    if(tempNationalParksUserData.nationalparks && tempNationalParksUserData.nationalparks.length > 0){
+
+      this.setState({nationalParksUserData: tempNationalParksUserData.nationalparks})
+
+      const mergedData = this.mergeNationalParksData(tempNationalParksUserData.nationalparks)
+
+      this.setState({mergedNationalParksData: mergedData})
+    }
+
+    // END INIT NATIONAL PARKS
+
+    // INIT HIKES
+
+    const tempHikesUserData = await getNationalParksUserData()
+    
+    if(tempHikesUserData.hikes && tempHikesUserData.hikes.length > 0){
+
+      this.setState({hikeUserData: tempHikesUserData.hikes})
+
+      const mergedData = this.mergeHikeData(tempHikesUserData.hikes)
+
+      this.setState({mergedHikeData: mergedData})
+    }
+
+    // END INIT HIKES
+    
+  }
+
+  // ---------------- HIKE STUFF ----------------
+
+  setIsHikePaneVisible = (visible) =>{
+    this.setState({ isHikePaneVisible: visible });
+  }
+
+  mergeHikeData = (hikeUserData)=>{
+    const localData = hikeData.sort((a, b) => a.id - b.id)
+
+    const userData = hikeUserData.sort((a, b) => a.id - b.id)
+
+    const mergedData = localData.map((dataObj, i)=>{
+      let retVal
+      if(dataObj.id == userData[i].id){
+        retVal = {...dataObj, ...userData[i]}
+      }
+      return retVal
+    })
+  return mergedData
+}
+
+changeIsHiked = async (id)=>{
+  this.setIsSyncing(true)
+
+  const newData = ( this.state.hikeUserData != null) ? this.state.hikeUserData : hikeData.map((data) => {return({isHiked: data.isHiked, id: data.id})})
+
+  newData.forEach((data, i)=>{
+    if(data.id == id){
+      data.isHiked = !data.isHiked
+    }
+  })
   
+  const newMergedData = this.mergeHikeData(newData)
+  
+  this.setState({hikeUserData: newData})
+  this.setState({mergedHikeData: newMergedData})
+  await saveHikesUserData(newData)
+  this.setIsSyncing(false)
+}
+
+  // ---------------- END HIKE STUFF ----------------
 
   setIsSyncing = (syncing) => {
-   
     this.setState({ isSyncing: syncing });
   }
 
@@ -121,46 +221,7 @@ changeNationalParkIsVisited = async (id)=>{
 }
 
 
-  initUserData = async () =>{
-
-    // INIT FISH
-    
-    const tempFishData = await getFishUserData()
-    
-    if(tempFishData && tempFishData.hasOwnProperty("fish")){
-
-      this.setState({fishUserData: tempFishData.fish})
-
-      
-
-      const fishStates = Object.getOwnPropertyNames(tempFishData.fish);
-
-      const mergedData = {}
-      fishStates.forEach((state)=>{
-        mergedData[`${state}`] = this.mergeFishData(state, tempFishData.fish[`${state}`])
-      })
-
-      this.setState({mergedFishData: mergedData})
-    }
-
-    // END INIT FISH
-
-    // INIT NATIONAL PARKS
-
-    const tempNationalParksUserData = await getNationalParksUserData()
-    
-    if(tempNationalParksUserData.nationalparks && tempNationalParksUserData.nationalparks.length > 0){
-
-      this.setState({nationalParksUserData: tempNationalParksUserData.nationalparks})
-
-      const mergedData = this.mergeNationalParksData(tempNationalParksUserData.nationalparks)
-
-      this.setState({mergedNationalParksData: mergedData})
-    }
-
-    // END INIT NATIONAL PARKS
-    
-  }
+  
 
 
   

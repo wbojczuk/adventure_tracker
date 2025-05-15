@@ -8,6 +8,11 @@
   --primary-color: #0785C5;
   --primary-color-dark: #aa3d3d;
   --secondary-color: #1E3D50;
+
+  --primary-hiking: #036458;
+  --secondary-hiking: #003B37;
+
+
   --third-color: #F6F6F6;
   --disabled-grey: #c2c2c2;
 
@@ -15,6 +20,7 @@
   ALREADY IMPORTED
   
   --primary-font: Bungee;
+  --oswald: oswald
   */
 
   --primary-text-color: black;

@@ -1,3 +1,4 @@
+import Banner from "@/app/(mainsite)/components/hikespage/Banner/Banner"
 import Header from "@/app/(mainsite)/components/hikespage/Header/Header"
 import HikeApp from "@/app/(mainsite)/components/hikespage/HikeApp/HikeApp"
 import HikesMap from "@/app/(mainsite)/components/hikespage/HikesMap/HikesMap"
@@ -31,6 +32,7 @@ export default function HikesPage(){
 	 	 <>
 		 	
 			<Header />
+			<Banner />
 			<HikeApp children={<><HikesMap /></>} />
 	 	 </>
 	 )

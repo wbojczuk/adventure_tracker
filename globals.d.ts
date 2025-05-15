@@ -12,6 +12,13 @@ interface hikeType{
     state: string
 }
 
+interface filterSettingsType{
+    lat: number,
+    long: number,
+    distance?: number,
+    state?: string
+}
+
 
 interface userSettingsType{
     homeState: string

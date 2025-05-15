@@ -5,8 +5,12 @@
 
 .map{
     width: 80%;
-    height: 40vw;
+    height: 35vw;
+    border: 5px solid var(--primary-hiking);
+    border-radius: 4px;
 }
+
+
 
 
 /* SMALL LAPTOP STYLES */

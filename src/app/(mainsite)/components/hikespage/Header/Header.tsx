@@ -39,7 +39,7 @@ export default function Header() {
         </div>
     
         <img src='/img/headers/hikes-header.webp' alt='Image of Fish' className='bg-img' />
-        <div className='shader'></div>
+        <div className='shader' style={{backgroundColor: "rgba(0,59,55,.50)"}}></div>
     </header>
   )
 }
