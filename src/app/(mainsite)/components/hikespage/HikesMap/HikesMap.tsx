@@ -3,6 +3,7 @@
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
 import L from 'leaflet';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import 'leaflet-defaulticon-compatibility';
 import styles from './hikesmap.module.css';
@@ -11,8 +12,15 @@ import kmtomiles from '@/app/(mainsite)/controllers/kmtomiles';
 import { hikeData } from '@/app/(mainsite)/data/hikeData';
 
 export default function HikesMap(){
+ const isOnMobile = window.matchMedia('(max-width: 649px)').matches;
+let mapZoom = 8
+if(isOnMobile){
+    mapZoom = 6
+}
 
-const hikedIcon = new L.Icon({
+ 
+let hikedIcon
+ hikedIcon = new L.Icon({
   iconUrl: '/icons/hikedloc.png',
   shadowUrl: '/icons/marker-shadow.png',
   iconSize: [25, 41],
@@ -20,7 +28,9 @@ const hikedIcon = new L.Icon({
   popupAnchor: [1, -34],
   shadowSize: [41, 41]
 });
-const notHikedIcon = new L.Icon({
+
+let notHikedIcon
+notHikedIcon = new L.Icon({
   iconUrl: '/icons/nothikedloc.png',
   shadowUrl: '/icons/marker-shadow.png',
   iconSize: [25, 41],
@@ -34,7 +44,7 @@ const notHikedIcon = new L.Icon({
 
         const map = L.map('map', {
         center: L.latLng(33.247875, -83.441162),
-        zoom: 8,
+        zoom: mapZoom,
         });
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

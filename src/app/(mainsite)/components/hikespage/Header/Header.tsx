@@ -38,7 +38,7 @@ export default function Header() {
 
         </div>
     
-        <img src='/img/headers/fish-header.webp' alt='Image of Fish' className='bg-img' />
+        <img src='/img/headers/hikes-header.webp' alt='Image of Fish' className='bg-img' />
         <div className='shader'></div>
     </header>
   )

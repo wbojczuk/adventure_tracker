@@ -1,4 +1,5 @@
 import Header from "@/app/(mainsite)/components/hikespage/Header/Header"
+import HikeApp from "@/app/(mainsite)/components/hikespage/HikeApp/HikeApp"
 import HikesMap from "@/app/(mainsite)/components/hikespage/HikesMap/HikesMap"
 import type { Metadata } from "next"
 
@@ -28,8 +29,9 @@ description: `${process.env.NEXT_PUBLIC_WEBSITE_DESC}`,
 export default function HikesPage(){
 	 return(
 	 	 <>
+		 	
 			<Header />
-			<HikesMap />
+			<HikeApp children={<><HikesMap /></>} />
 	 	 </>
 	 )
 }
