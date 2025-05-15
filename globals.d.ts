@@ -1,7 +1,17 @@
-interface faqType{
-    question: string,
-    answer: string
+
+
+interface hikeType{
+    length: number,
+    difficulty?: number
+    long: number,
+    lat: number,
+    name: string,
+    desc?: string,
+    isHiked: boolean,
+    id: number,
+    state: string
 }
+
 
 interface userSettingsType{
     homeState: string
@@ -13,6 +23,15 @@ interface nationalParkType{
     isVisited: boolean
     logo: string,
     id: number
+}
+
+interface adventureType{
+    id: any,
+    name: string,
+    tasks: any[],
+    information: string,
+    difficulty: number,
+    category: string // fishing, hiking, national_parks, etc
 }
 
 interface fishData{
@@ -66,4 +85,9 @@ interface serviceType{
     description: string,
     backgroundImageUrl: string,
     url?: string
+}
+
+interface faqType{
+    question: string,
+    answer: string
 }

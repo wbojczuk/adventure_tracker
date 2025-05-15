@@ -1,0 +1,5 @@
+.header svg{
+    --size: 7rem;
+    width: var(--size);
+    height: calc(var(--size) * 0.5);
+}

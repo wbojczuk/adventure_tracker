@@ -38,31 +38,10 @@ export default function AllFish(props: {fishData: fishType[], currentState: stri
   // HELPERS
    function changeIsCaught(id: number){
     if(isAuthenticated){
-      // props.fishData.forEach((fish: fishType, i: number)=>{
-      //   if(fish.id == id){
-      //     const newFishData = [...props.fishData]
-      //     newFishData[i].isCaught = !newFishData[i].isCaught
-      //     const saveData = newFishData.map((data, i)=>{
-      //       return {
-      //         id: data.id,
-      //         isCaught: data.isCaught
-      //       }
-      //     })
-      //     props.setFishData(newFishData)
-          // setIt(saveData)
-      //   }
-      // })
       changeFishIsCaught(props.currentState, id)
     }else{
       alert("Please Log In/Sign Up To Save Data")
     }
-
-    // async function setIt(saveData: any){
-    //   setIsSyncing(true)
-    //   await  saveFishUserData(props.currentState, saveData)
-    //   setIsSyncing(false)
-    // }
-    
   }
 
   
