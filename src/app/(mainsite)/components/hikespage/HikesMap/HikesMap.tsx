@@ -19,8 +19,8 @@ if(isOnMobile){
 }
 
  
-let hikedIcon
- hikedIcon = new L.Icon({
+
+ const hikedIcon = new L.Icon({
   iconUrl: '/icons/hikedloc.png',
   shadowUrl: '/icons/marker-shadow.png',
   iconSize: [25, 41],
@@ -29,8 +29,7 @@ let hikedIcon
   shadowSize: [41, 41]
 });
 
-let notHikedIcon
-notHikedIcon = new L.Icon({
+const notHikedIcon = new L.Icon({
   iconUrl: '/icons/nothikedloc.png',
   shadowUrl: '/icons/marker-shadow.png',
   iconSize: [25, 41],
