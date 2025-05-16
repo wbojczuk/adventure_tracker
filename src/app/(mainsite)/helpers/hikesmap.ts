@@ -30,7 +30,7 @@ function filterHikes(map: L.Map, circle: L.Circle, setCircle:any, startMarker: L
     }
 
     const startLocIcon = new L.Icon({
-      iconUrl: '/icons/hikedloc.png',
+      iconUrl: '/icons/startloc.png',
       shadowUrl: '/icons/marker-shadow.png',
       iconSize: [25, 41],
       iconAnchor: [12, 41],
