@@ -11,20 +11,25 @@ import { useEffect, useState } from 'react';
 import kmtomiles from '@/app/(mainsite)/controllers/kmtomiles';
 import { hikeData } from '@/app/(mainsite)/data/hikeData';
 import milesToMeters from '@/app/(mainsite)/controllers/milestometers';
+import { filterHikes } from '@/app/(mainsite)/helpers/hikesmap';
 
 
 export default function HikesMap(){
-    let [map, setMap]: [map: L.Map, setMap: any] = useState(null!)
-    let [markers, setMarkers] = useState([])
-    let [circle, setCircle]: [circle: L.Circle, setCircle: any] = useState(null!)
+    //  ------------ STATES ------------
+    const [map, setMap]: [map: L.Map, setMap: any] = useState(null!)
+    const [markers, setMarkers] = useState([])
+    const [circle, setCircle]: [circle: L.Circle, setCircle: any] = useState(null!)
+    const [filteredHikes, setFilteredHikes]: [filteredHikes: hikeType[], setFilteredHikes: any] = useState(hikeData)
+
+    const [isHikedFilter, setIsHikedFilter]: [isHikedFilter: boolean, setIsHikedFilter: any] = useState(null!)
+    const [distanceFilter, setDistanceFilter]: [distanceFilter: number, setDistanceFilter: any] = useState(-1)
 
 
- const isOnMobile = window.matchMedia('(max-width: 649px)').matches;
-let mapZoom = 6
+    const isOnMobile = window.matchMedia('(max-width: 649px)').matches;
+    let mapZoom = 6
  
 
-// STATES
-const [filteredHikes, setFilteredHikes]: [filteredHikes: hikeType[], setFilteredHikes: any] = useState(hikeData)
+
 
 
 
@@ -57,6 +62,19 @@ const notHikedIcon = new L.Icon({
         center: L.latLng(33.247875, -83.441162),
         zoom: mapZoom,
         }))
+
+        document.querySelectorAll(`.${styles.filter}`).forEach((elem)=>{
+            elem.addEventListener("click", (evt: any)=>{
+                document.querySelectorAll(`.${styles.filter}`).forEach((elem)=>{
+                if(evt.currentTarget == elem){
+                    elem.classList.add(styles.activeFilter)
+                }else{
+                    elem.classList.remove(styles.activeFilter)
+                }
+
+                })
+        })
+        })
     }, [])
 
 
@@ -91,75 +109,42 @@ const notHikedIcon = new L.Icon({
     }, [filteredHikes, map])
 
 
-    // --------------- HELPERS ---------------
+    // FILTER UPDATER
+    useEffect(()=>{
+       if(map !== null){
+         setFilteredHikes(filterHikes(map, circle, setCircle, hikeData,
+            {
+            long: -85.1687,
+            lat: 34.2565,
+            distance: distanceFilter,
+            isHiked: isHikedFilter}))
+       }
+    }, [isHikedFilter])
 
-    function getDistance(map: any, lat1: number, long1: number, lat2: number, long2: number){
-        return Math.round(kmtomiles(map.distance( L.latLng(lat1, long1),  L.latLng(lat2, long2)) / 1000))
-    }
 
-    
-interface filterSettingsType{
-    lat: number,
-    long: number,
-    distance?: number,
-    state?: string
-}
+    // 
 
-// ------------ Start Filter Hikes ------------
 
-function filterHikes(map: L.Map, data: hikeType[], newSettings: filterSettingsType){
-    let defaultSettings: filterSettingsType = {
-        distance: -1,
-        state: "undefined",
-        lat: 0,
-        long: 0
-    }
+    // --------------- HELPERS --------------
 
-     const settings = {...defaultSettings, ...newSettings}
-
-    let newData = hikeData
-     
-     function getDistance(map: any, lat1: number, long1: number, lat2: number, long2: number){
-            return Math.round(kmtomiles(map.distance( L.latLng(lat1, long1),  L.latLng(lat2, long2)) / 1000))
-    }
-
-    if(settings.distance! != -1){
-     newData = newData.filter((data, i)=>{
-        return (getDistance(map, settings.lat, settings.long, data.lat, data.long) <= settings.distance!)
-    })
-
-    // Draw Circle
-    if(circle !== null){
-        map.removeLayer(circle)
-    }
-    const newCircle = L.circle([settings.lat, settings.long], {radius: milesToMeters(settings.distance!), fill: false, color: "var(--primary-hiking)"})
-
-    setCircle(newCircle)
-    newCircle.addTo(map)
-
-    }
-
-    if(settings.state != "undefined"){
-       newData = newData.filter((data)=>{
-            return (data.state.trim().toLowerCase() == settings.state!.trim().toLowerCase())
-        })
+    function setActiveFilter(evt: any){
         
     }
-    return newData
-}
-
-// ------------ End Filter Hikes ------------
-
+    
 
 
 function changeFilter(){
-      setFilteredHikes(filterHikes(map, hikeData, {long: -85.1687, lat: 34.2565, distance: 100}))
+      setIsHikedFilter(()=>!isHikedFilter)
     }
 
 return (
  <>
- <div onClick={changeFilter}>PRESS TO CHANGE FILTER</div>
  <div className={styles.hikesMap}>
+    <div className={styles.filtersWrapper}>
+        <button onClick={(()=>{setIsHikedFilter(null)})} className={styles.filter}>All Hikes</button>
+        <button onClick={(()=>{setIsHikedFilter(false)})} className={styles.filter}>Not Hikes</button>
+        <button onClick={(()=>{setIsHikedFilter(true)})} className={styles.filter}>Is Hiked</button>
+    </div>
     <div className="center">
         <div id="map" className={styles.map}>
 
