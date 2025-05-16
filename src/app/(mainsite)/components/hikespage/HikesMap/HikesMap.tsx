@@ -20,7 +20,10 @@ export default function HikesMap(){
     const [markers, setMarkers] = useState([])
     const [circle, setCircle]: [circle: L.Circle, setCircle: any] = useState(null!)
     const [filteredHikes, setFilteredHikes]: [filteredHikes: hikeType[], setFilteredHikes: any] = useState(hikeData)
+    const [startMarker, setStartMarker]: [startMarker: L.Marker, setStartMarker: any] = useState(null!)
 
+    const [latStart, setLatStart] = useState(34.2565)
+    const[longStart, setLongStart] = useState(-85.1687)
     const [isHikedFilter, setIsHikedFilter]: [isHikedFilter: boolean, setIsHikedFilter: any] = useState(null!)
     const [distanceFilter, setDistanceFilter]: [distanceFilter: number, setDistanceFilter: any] = useState(-1)
 
@@ -44,6 +47,14 @@ export default function HikesMap(){
   popupAnchor: [1, -34],
   shadowSize: [41, 41]
 });
+ const startLocIcon = new L.Icon({
+  iconUrl: '/icons/startloc.png',
+  shadowUrl: '/icons/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
 
 const notHikedIcon = new L.Icon({
   iconUrl: '/icons/nothikedloc.png',
@@ -59,9 +70,11 @@ const notHikedIcon = new L.Icon({
 
     useEffect(()=>{
         setMap(L.map('map', {
-        center: L.latLng(33.247875, -83.441162),
+        center: L.latLng(latStart, longStart),
         zoom: mapZoom,
         }))
+
+        
 
         document.querySelectorAll(`.${styles.filter}`).forEach((elem)=>{
             elem.addEventListener("click", (evt: any)=>{
@@ -94,11 +107,18 @@ const notHikedIcon = new L.Icon({
             maxZoom: 19
         }).addTo(map);
 
+                if(startMarker === null){
+                    const startMarkerTemp = L.marker([latStart, longStart], {icon: startLocIcon})
+        startMarkerTemp.bindPopup("Start Location")
+        startMarkerTemp.addTo(map)
+        setStartMarker(startMarkerTemp)
+                }
+
+
 
         // Add Hike Markers
         const markersTemp: any = []
         filteredHikes.forEach((hike, i)=>{
-            console.log(i)
             const marker = L.marker([hike.lat, hike.long], {icon: (hike.isHiked) ? hikedIcon : notHikedIcon})
             markersTemp.push(marker)
             marker.addTo(map).bindPopup(`${hike.name}<br>Difficulty: ${hike.difficulty}/10<br>Length: ${hike.length} Miles<br><a href="/hike/${hike.id}">More Info</a>`)
@@ -112,14 +132,16 @@ const notHikedIcon = new L.Icon({
     // FILTER UPDATER
     useEffect(()=>{
        if(map !== null){
-         setFilteredHikes(filterHikes(map, circle, setCircle, hikeData,
-            {
-            long: -85.1687,
-            lat: 34.2565,
-            distance: distanceFilter,
-            isHiked: isHikedFilter}))
-       }
-    }, [isHikedFilter])
+        
+            setFilteredHikes(filterHikes(map, circle, setCircle,startMarker, setStartMarker, hikeData,
+                {
+                lat: latStart,
+                long: longStart,
+                distance: distanceFilter,
+                isHiked: isHikedFilter}))
+
+        }
+    }, [isHikedFilter, distanceFilter, latStart, longStart])
 
 
     // 
@@ -130,7 +152,24 @@ const notHikedIcon = new L.Icon({
     function setActiveFilter(evt: any){
         
     }
-    
+
+    function changeDistanceHandler(evt: any){
+        if(evt.currentTarget.value){
+            setDistanceFilter(evt.currentTarget.value)
+        }else{
+            setDistanceFilter(-1)
+        }
+    }
+
+    function getUserLocationHandler(evt: any){
+         if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((pos)=>{
+                // If Location Allowed
+               setLatStart(pos.coords.latitude)
+               setLongStart(pos.coords.longitude)
+            })
+    }
+}
 
 
 function changeFilter(){
@@ -141,13 +180,26 @@ return (
  <>
  <div className={styles.hikesMap}>
     <div className={styles.filtersWrapper}>
-        <button onClick={(()=>{setIsHikedFilter(null)})} className={styles.filter}>All Hikes</button>
-        <button onClick={(()=>{setIsHikedFilter(false)})} className={styles.filter}>Not Hikes</button>
+        <button onClick={(()=>{setIsHikedFilter(null)})} className={`${styles.filter} ${styles.activeFilter}`}>All Hikes</button>
+        <button onClick={(()=>{setIsHikedFilter(false)})} className={styles.filter}>Not Hiked</button>
         <button onClick={(()=>{setIsHikedFilter(true)})} className={styles.filter}>Is Hiked</button>
     </div>
+
     <div className="center">
         <div id="map" className={styles.map}>
 
+        </div>
+    </div>
+
+    <div className={styles.distanceWrapper}>
+        <div className={styles.distanceContainer}>
+
+            <span>Showing hikes within </span> <input min={1} onInput={changeDistanceHandler} className={styles.distanceInput} type='number' placeholder='Any' /> <span> Miles of</span>
+
+            <div className={styles.startLoc}>
+                <input className={styles.startLocInput} type="text" defaultValue={"Rome, GA"} />
+                <button onClick={getUserLocationHandler} className={styles.getLoc}>Use Your Location</button>
+            </div>
         </div>
     </div>
 
@@ -155,4 +207,4 @@ return (
     <div className='shader' style={{backgroundColor: "rgba(255,255,255,.77)"}}></div>
  </div>
  </>
-)};
+)}

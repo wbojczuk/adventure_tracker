@@ -15,21 +15,44 @@ interface filterSettingsType{
     long: number,
     distance?: number,
     state?: string,
-    isHiked?: boolean
+    isHiked?: boolean,
+    
 }
 
-function filterHikes(map: L.Map, circle: L.Circle, setCircle:any, data: hikeType[], newSettings: filterSettingsType){
+function filterHikes(map: L.Map, circle: L.Circle, setCircle:any, startMarker: L.Marker, setStartMarker: any, data: hikeType[], newSettings: filterSettingsType){
     let defaultSettings: filterSettingsType = {
         distance: -1,
         state: "undefined",
         lat: 0,
         long: 0,
-        isHiked: null!
+        isHiked: null!,
+
     }
+
+    const startLocIcon = new L.Icon({
+      iconUrl: '/icons/hikedloc.png',
+      shadowUrl: '/icons/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
+    
 
      const settings = {...defaultSettings, ...newSettings}
 
     let newData = data
+
+
+
+    if(startMarker.getLatLng() !== L.latLng(settings.lat, settings.long)){
+        map.removeLayer(startMarker)
+        const startMarkerTemp = L.marker([settings.lat, settings.long], {icon: startLocIcon})
+        startMarkerTemp.bindPopup("Start Location")
+        startMarkerTemp.addTo(map)
+        setStartMarker(startMarkerTemp)
+    }
      
      function getDistance(map: any, lat1: number, long1: number, lat2: number, long2: number){
             return Math.round(kmtomiles(map.distance( L.latLng(lat1, long1),  L.latLng(lat2, long2)) / 1000))
@@ -46,6 +69,7 @@ function filterHikes(map: L.Map, circle: L.Circle, setCircle:any, data: hikeType
         return (getDistance(map, settings.lat, settings.long, data.lat, data.long) <= settings.distance!)
     })
 
+
     // Draw Circle
     if(circle !== null){
         map.removeLayer(circle)
@@ -55,7 +79,12 @@ function filterHikes(map: L.Map, circle: L.Circle, setCircle:any, data: hikeType
     setCircle(newCircle)
     newCircle.addTo(map)
 
+    }else{
+      if(circle !== null){
+        map.removeLayer(circle)
+        }  
     }
+
 
     if(settings.state != "undefined"){
        newData = newData.filter((data)=>{
