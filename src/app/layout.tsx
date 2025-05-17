@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Bungee } from 'next/font/google'
+import { Bungee, Oswald } from 'next/font/google'
 import Footer from './(mainsite)/components/misc/Footer/Footer';
 import Navbar from './(mainsite)/components/misc/Navbar/Navbar';
 import Script from 'next/script';
@@ -20,7 +20,7 @@ import App from './(mainsite)/components/misc/App/App';
 
 
 const primaryFont = Bungee({ subsets: ['latin'], weight: ["400"], display: "swap", variable: "--primary-font" })
-
+const oswald = Oswald({ subsets: ['latin'], weight: ["200","300","400","500","600","700",], display: "swap", variable: "--oswald" })
 export const metadata: Metadata = {
   title: `${process.env.NEXT_PUBLIC_WEBSITE_TITLE}`,
   description: `${process.env.NEXT_PUBLIC_WEBSITE_DESC}`,
@@ -54,7 +54,7 @@ export default function RootLayout({
     <AuthProvider>
     <AppProvider>
     <html lang="en">
-      <body className={`${primaryFont.variable}`}>
+      <body className={`${primaryFont.variable} ${oswald.variable}`}>
 
       {(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID != "0000000") && <><Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
       <Script id="google-analytics">

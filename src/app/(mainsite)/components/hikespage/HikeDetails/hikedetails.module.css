@@ -1,0 +1,283 @@
+.hikeDetailsWrapper{
+    position: fixed;
+    top:0;
+    left:0;
+    padding: var(--section-padding-top) 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility:hidden;
+}
+
+.shader{
+    transition: 0.4s opacity;
+    opacity: 0;
+}
+
+.close{
+    border: none;
+    background-color: transparent;
+    width: 2.5vw;
+    height: 2.5vw;
+    padding: none;
+    position: absolute;
+    top: 0.5vw;
+    right: 0.5vw;
+}
+
+.close svg{
+    width: 2.5vw;
+    height: 2.5vw;
+    color: var(--secondary-hiking);
+}
+
+.hikeDetails{
+    position: relative;
+    padding: 1vw 0;
+    width: 60vw;
+    height: 40vw;
+    background-color: rgba(255,255,255,.95);
+    border-radius: 10px;
+    overflow-y: scroll;
+    transition: 0.3s transform;
+    transform: translateX(100%);
+}
+
+.hikeDetails::-webkit-scrollbar {
+  width: 0.85em;
+  background-color: var(--secondary-color);
+}
+
+.hikeDetails::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--primary-color);
+}
+
+.hikeDetails::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.375em rgb(0 0 0 / 30%);
+  -webkit-box-shadow: inset 0 0 0.375em rgb(0 0 0 / 30%);
+  background-color: #fff;
+}
+
+.name{
+    display: inline-block;
+    background-color: var(--primary-hiking);
+    color: white;
+    font-weight: 400;
+    font-family: var(--oswald);
+    width: 60%;
+    margin-top: 2vw;
+    padding: 1% 3%;
+    font-size: 2rem;
+}
+
+.carouselWrapper{
+    position: relative;
+    display: inline-flex;
+    width: 80%;
+    margin: 2vw 10%;
+    /* padding: 3vw 0 2vw 0; */
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.swiper{
+mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
+}
+
+.img{
+    display: inline-block;
+    position: relative;
+    width:11vw;
+    aspect-ratio: 1/1.2;
+    object-fit: cover;
+    object-position: center;
+}
+
+.buttonWrapper{
+    position: absolute;
+    z-index: 998;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110%;
+    left: -5%
+}
+.button{
+    width: 2.5vw;
+    height: 2.5vw;
+    padding: 0.4vw;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.3s transform;
+    border-radius: 50%;
+   color: var(--primary-hiking);
+}
+.button:hover{
+    transform: rotate(360deg);
+}
+.button svg{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    color: var(--primary-hiking);
+}
+
+.container{
+    padding: 0 5%;
+    font-family: var(--primary-font);
+    color: var(--secondary-hiking);
+    
+}
+
+.linkWrapper{
+    background-color: var(--primary-hiking);
+    color: white;
+    border-radius: 999px;
+    padding: 0.5vw 2vw;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.link{
+    padding: 0.5vw;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.link:not(.link:nth-child(1)){
+border-right: 1.5px solid white;
+}
+
+.link:not(.link:nth-child(3)){
+    border-left: 1.5px solid white;
+}
+
+.bullet{
+    position: relative;
+    margin: 1.5vw 0;
+    font-size: 2rem;
+    
+}
+
+.bullet::after, .descTitle::after{
+     content: '';
+     display: inline-block;
+     position: absolute;
+     top: 0;
+     left: -10px;
+     width: 4px;
+     height: 100%;
+     background-color: var(--primary-hiking);
+}
+
+.hikedWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2vw;
+}
+
+.isHiked{
+    color: #61c74f;
+}
+
+.notHiked{
+    color: var(--primary-color);
+}
+
+.markHiked{
+    border: none;
+    border-radius: 999px;
+    background-color: var(--primary-hiking);
+    color: white;
+    font-family: var(--primary-font);
+    padding: 0.5vw 2vw;
+}
+
+.easy{
+    color: #61c74f;
+}
+.medium{
+    color: #E6DC7D;
+}
+.hard{
+    color: #E65A5D;
+}
+.veryHard{
+    color: #632726;
+}
+
+.descWrapper{
+    display: flex;
+    align-items: flex-start;
+}
+
+.descTitle{
+    position: relative;
+    font-size: 2rem;
+    width: 30%;
+}
+.descWrapper p{
+    font-size: 1.2rem;
+    width: 70%;
+}
+
+
+
+/* SMALL LAPTOP STYLES */
+@media only screen and (min-width: 991px) and (max-width: 1400px){
+
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+.carouselWrapper{
+        padding: 4vw 0 3vw 0;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .img{
+        width: 45vw;
+    }
+    
+    .buttonWrapper{
+        padding-bottom: 3vw;
+        gap: 10vw;
+    }
+    .button{
+        width: 5vw;
+        height: 5vw;
+        padding: 0.6vw;
+    }
+}
+
+ /* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+.carouselWrapper{
+        padding: 8vw 0 6vw 0;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .img{
+        width: 80vw;
+    }
+    
+    .buttonWrapper{
+        padding-bottom: 3vw;
+        gap: 15vw;
+    }
+    .button{
+        width: 8vw;
+        height: 8vw;
+        padding: 1vw;
+    }
+}

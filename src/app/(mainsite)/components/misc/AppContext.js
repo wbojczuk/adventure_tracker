@@ -7,7 +7,7 @@ import { Hubballi } from "next/font/google";
 import saveNationalParksUserData, { getNationalParksUserData } from "../../controllers/nationalParksHelpers";
 import getNationalParksData from "../../controllers/getNationalParksData";
 import { hikeData } from "../../data/hikeData";
-import saveHikesUserData from "../../controllers/hikesHelpers";
+import saveHikesUserData, { getHikesUserData } from "../../controllers/hikesHelpers";
 // @ts-ignore
 const AppContext = React.createContext();
 
@@ -19,6 +19,8 @@ class AppProvider extends Component {
     // },
 
     isHikePaneVisible: false,
+    hikePaneData: hikeData[0],
+
     hikeUserData: null,
     mergedHikeData: null,
     
@@ -75,7 +77,7 @@ class AppProvider extends Component {
 
     // INIT HIKES
 
-    const tempHikesUserData = await getNationalParksUserData()
+    const tempHikesUserData = await getHikesUserData()
     
     if(tempHikesUserData.hikes && tempHikesUserData.hikes.length > 0){
 
@@ -96,7 +98,12 @@ class AppProvider extends Component {
     this.setState({ isHikePaneVisible: visible });
   }
 
+  setHikePaneData = (data)=>{
+    this.setState({hikePaneData: data})
+  }
+
   mergeHikeData = (hikeUserData)=>{
+    console.log("hey")
     const localData = hikeData.sort((a, b) => a.id - b.id)
 
     const userData = hikeUserData.sort((a, b) => a.id - b.id)
@@ -108,6 +115,7 @@ class AppProvider extends Component {
       }
       return retVal
     })
+    
   return mergedData
 }
 
@@ -257,6 +265,8 @@ changeNationalParkIsVisited = async (id)=>{
       <AppContext.Provider
               value={{
           ...this.state,
+          setHikePaneData: this.setHikePaneData,
+          setIsHikePaneVisible: this.setIsHikePaneVisible,
          setIsSyncing: this.setIsSyncing,
          initUserData: this.initUserData,
          changeFishIsCaught: this.changeFishIsCaught,

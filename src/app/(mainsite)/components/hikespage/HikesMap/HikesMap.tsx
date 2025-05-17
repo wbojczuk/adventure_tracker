@@ -2,6 +2,7 @@
 // @ts-ignore
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; // Re-uses images from ~leaflet package
+import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
 import L from 'leaflet';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
@@ -12,21 +13,33 @@ import kmtomiles from '@/app/(mainsite)/controllers/kmtomiles';
 import { hikeData } from '@/app/(mainsite)/data/hikeData';
 import milesToMeters from '@/app/(mainsite)/controllers/milestometers';
 import { filterHikes } from '@/app/(mainsite)/helpers/hikesmap';
+import HikeDetails from '../HikeDetails/HikeDetails';
+import { useContext } from 'react';
+import { AppContext } from '../../misc/AppContext';
 
 
 export default function HikesMap(){
     //  ------------ STATES ------------
+    // CONTEXT METHODS/PROPS
+    const {mergedHikeData, hikeUserData,setIsHikePaneVisible, setHikePaneData} = useContext(AppContext)
+    const {isAuthenticated, isLoading} = useKindeBrowserClient()
+
     const [map, setMap]: [map: L.Map, setMap: any] = useState(null!)
     const [markers, setMarkers] = useState([])
     const [circle, setCircle]: [circle: L.Circle, setCircle: any] = useState(null!)
-    const [filteredHikes, setFilteredHikes]: [filteredHikes: hikeType[], setFilteredHikes: any] = useState(hikeData)
+    
     const [startMarker, setStartMarker]: [startMarker: L.Marker, setStartMarker: any] = useState(null!)
+    const [newHikeData, setNewHikeData]: [newHikeData: hikeType[], setNewHikeData:any] = useState(null!)
+    const [filteredHikes, setFilteredHikes]: [filteredHikes: hikeType[], setFilteredHikes: any] = useState(newHikeData)
+    const [isAppLoading, setIsAppLoading] = useState(true)
 
     const [latStart, setLatStart] = useState(34.2565)
     const[longStart, setLongStart] = useState(-85.1687)
     const [isHikedFilter, setIsHikedFilter]: [isHikedFilter: boolean, setIsHikedFilter: any] = useState(null!)
     const [distanceFilter, setDistanceFilter]: [distanceFilter: number, setDistanceFilter: any] = useState(-1)
 
+
+    
 
     const isOnMobile = window.matchMedia('(max-width: 649px)').matches;
     let mapZoom = 6
@@ -67,12 +80,45 @@ const notHikedIcon = new L.Icon({
 
     // MAP INIT
 
+    useEffect(()=>{
+            if(!isLoading){
+                if(isAuthenticated){
+                    setData() 
+                }else{
+                    //@ts-ignore
+                    setNewHikeData(hikeData)
+                    setIsAppLoading(false)
+                }
+            }
+    
+            async function setData(){
+                
+                if(mergedHikeData != null){
+                    setNewHikeData(mergedHikeData)
+                    
+                    
+                }else{
+                   setNewHikeData(hikeData)
+                }
+                setIsAppLoading(false)
+                
+            }
+    
+        }, [isLoading, mergedHikeData, hikeUserData])
+
 
     useEffect(()=>{
-        setMap(L.map('map', {
+        if(newHikeData !== null){
+            const mapTemp = L.map('map', {
         center: L.latLng(latStart, longStart),
         zoom: mapZoom,
-        }))
+        })
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19
+        }).addTo(mapTemp);
+
+        setMap(mapTemp)
 
         
 
@@ -88,13 +134,15 @@ const notHikedIcon = new L.Icon({
                 })
         })
         })
-    }, [])
+        }
+    }, [newHikeData])
 
 
     // MAP REFRESH/BUILD
 
     useEffect(()=>{
-        if(markers.length > 0){
+        if(filteredHikes !== null){
+            if(markers.length > 0){
             markers.forEach((marker)=>{
                 map.removeLayer(marker)
             })
@@ -103,9 +151,7 @@ const notHikedIcon = new L.Icon({
             
             map.invalidateSize()
 
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19
-        }).addTo(map);
+        
 
                 if(startMarker === null){
                     const startMarkerTemp = L.marker([latStart, longStart], {icon: startLocIcon})
@@ -121,10 +167,15 @@ const notHikedIcon = new L.Icon({
         filteredHikes.forEach((hike, i)=>{
             const marker = L.marker([hike.lat, hike.long], {icon: (hike.isHiked) ? hikedIcon : notHikedIcon})
             markersTemp.push(marker)
-            marker.addTo(map).bindPopup(`${hike.name}<br>Difficulty: ${hike.difficulty}/10<br>Length: ${hike.length} Miles<br><a href="/hike/${hike.id}">More Info</a>`)
+            marker.addTo(map)
+            .on('click', ()=>{
+                setHikePaneData(hike)
+                setIsHikePaneVisible(true)
+            });
         })
         setMarkers(markersTemp)
          }
+        }
         
     }, [filteredHikes, map])
 
@@ -133,7 +184,7 @@ const notHikedIcon = new L.Icon({
     useEffect(()=>{
        if(map !== null){
         
-            setFilteredHikes(filterHikes(map, circle, setCircle,startMarker, setStartMarker, hikeData,
+            setFilteredHikes(filterHikes(map, circle, setCircle,startMarker, setStartMarker, newHikeData,
                 {
                 lat: latStart,
                 long: longStart,
@@ -141,7 +192,7 @@ const notHikedIcon = new L.Icon({
                 isHiked: isHikedFilter}))
 
         }
-    }, [isHikedFilter, distanceFilter, latStart, longStart])
+    }, [isHikedFilter, distanceFilter, latStart, longStart, newHikeData, map])
 
 
     // 
@@ -178,6 +229,7 @@ function changeFilter(){
 
 return (
  <>
+{(!isAppLoading) && <>
  <div className={styles.hikesMap}>
     <div className={styles.filtersWrapper}>
         <button onClick={(()=>{setIsHikedFilter(null)})} className={`${styles.filter} ${styles.activeFilter}`}>All Hikes</button>
@@ -206,5 +258,7 @@ return (
      <img src='/img/hikingmapbg.webp' alt='Image of mountain' className='bg-img' />
     <div className='shader' style={{backgroundColor: "rgba(255,255,255,.77)"}}></div>
  </div>
+ <HikeDetails />
+</>}
  </>
 )}

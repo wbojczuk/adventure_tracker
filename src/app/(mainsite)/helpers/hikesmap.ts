@@ -46,7 +46,7 @@ function filterHikes(map: L.Map, circle: L.Circle, setCircle:any, startMarker: L
 
 
 
-    if(startMarker.getLatLng() !== L.latLng(settings.lat, settings.long)){
+    if(startMarker !== null && startMarker.getLatLng() !== L.latLng(settings.lat, settings.long)){
         map.removeLayer(startMarker)
         const startMarkerTemp = L.marker([settings.lat, settings.long], {icon: startLocIcon})
         startMarkerTemp.bindPopup("Start Location")

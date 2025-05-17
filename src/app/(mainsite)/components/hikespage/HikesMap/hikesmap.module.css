@@ -113,7 +113,43 @@
 
 /* TABLET STYLES */
 @media only screen and (min-width: 650px) and (max-width: 990px){
+.map{
+    width: 90%;
+    height: 60vw;
+}
+.filtersWrapper{
+    padding-bottom: 3vw;
+}
 
+
+.filter{
+    font-size: 1.8rem;
+}
+
+.distanceWrapper{
+    padding-top: 3vw;
+}
+
+.distanceContainer{
+    gap: 1.2vw;
+    width: 80%;
+    padding: 3vw 4vw;
+    font-size: 1.8rem;
+}
+
+.distanceInput{
+    width: 8vw;
+    padding: 0.3vw 0;
+    font-size: 1.8rem;
+}
+
+.startLocInput, .getLoc{
+     width: 15vw;
+}
+
+.startLoc{
+    gap: 0.8vw;
+}
 }
 
  /* MOBILE STYLES */
@@ -121,6 +157,41 @@
 .map{
     width: 100%;
     height: 80vw;
+}
+
+.filtersWrapper{
+    padding-bottom: 5vw;
+}
+
+
+.filter{
+    font-size: 1.6rem;
+    padding: 1.5vw 3vw;
+}
+
+.distanceWrapper{
+    padding-top: 4vw;
+}
+
+.distanceContainer{
+    gap: 1.6vw;
+    width: 90%;
+    padding: 4vw 5vw;
+    font-size: 1.2rem;
+}
+
+.distanceInput{
+    width: 10vw;
+    padding: 0.3vw 0;
+    font-size: 1.2rem;
+}
+
+.startLocInput, .getLoc{
+     width: 16vw;
+}
+
+.startLoc{
+    gap: 0.8vw;
 }
 
 }

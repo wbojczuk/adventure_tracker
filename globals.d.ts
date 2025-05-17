@@ -2,14 +2,18 @@
 
 interface hikeType{
     length: number,
-    difficulty?: number
+    difficulty: number
     long: number,
     lat: number,
     name: string,
     desc?: string,
     isHiked: boolean,
     id: number,
-    state: string
+    state: string,
+    address: string,
+    googleMapUrl: string,
+    gpx?: string,
+    photos: string[]
 }
 
 
