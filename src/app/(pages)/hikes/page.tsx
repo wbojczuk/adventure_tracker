@@ -30,9 +30,6 @@ description: `${process.env.NEXT_PUBLIC_WEBSITE_DESC}`,
 export default function HikesPage(){
 	 return(
 	 	 <>
-		 	
-			<Header />
-			<Banner />
 			<HikeApp children={<><HikesMap /></>} />
 	 	 </>
 	 )

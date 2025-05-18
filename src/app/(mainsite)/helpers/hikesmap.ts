@@ -51,6 +51,7 @@ function filterHikes(map: L.Map, circle: L.Circle, setCircle:any, startMarker: L
         const startMarkerTemp = L.marker([settings.lat, settings.long], {icon: startLocIcon})
         startMarkerTemp.bindPopup("Start Location")
         startMarkerTemp.addTo(map)
+        map.flyTo([settings.lat, settings.long], 8)
         setStartMarker(startMarkerTemp)
     }
      

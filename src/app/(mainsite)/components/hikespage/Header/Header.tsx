@@ -1,9 +1,10 @@
 "use client"
+import RandomHike from "../RandomHike/RandomHike"
 import "./header.css"
 import styles from "./header.module.css"
 
 
-export default function Header() {
+export default function Header(props: {filteredHikes: hikeType[]}) {
 
   return (
     <header className={`header ${styles.header}`}>
@@ -35,7 +36,7 @@ export default function Header() {
 </svg> <br />Hikes</h1>
 
         <div className="center">
-
+            <RandomHike filteredHikes={props.filteredHikes} />
         </div>
     
         <img src='/img/headers/hikes-header.webp' alt='Image of Fish' className='bg-img' />

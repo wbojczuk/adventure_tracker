@@ -14,9 +14,7 @@ const AppContext = React.createContext();
 class AppProvider extends Component {
   state = {
     // collections: [],
-    // userSettings: {
-    //   homeState: ""
-    // },
+    userSettings: {},
 
     isHikePaneVisible: false,
     hikePaneData: hikeData[0],
@@ -37,6 +35,9 @@ class AppProvider extends Component {
 
   }
   initUserData = async () =>{
+
+    const userSettingsTemp = await getUserSettings()
+    this.setState({userSettings: userSettingsTemp.usersettings})
 
     // INIT FISH
     
@@ -103,7 +104,6 @@ class AppProvider extends Component {
   }
 
   mergeHikeData = (hikeUserData)=>{
-    console.log("hey")
     const localData = hikeData.sort((a, b) => a.id - b.id)
 
     const userData = hikeUserData.sort((a, b) => a.id - b.id)
@@ -267,10 +267,12 @@ changeNationalParkIsVisited = async (id)=>{
           ...this.state,
           setHikePaneData: this.setHikePaneData,
           setIsHikePaneVisible: this.setIsHikePaneVisible,
+        
          setIsSyncing: this.setIsSyncing,
          initUserData: this.initUserData,
          changeFishIsCaught: this.changeFishIsCaught,
-         changeNationalParkIsVisited: this.changeNationalParkIsVisited
+         changeNationalParkIsVisited: this.changeNationalParkIsVisited,
+         changeIsHiked: this.changeIsHiked
         }}
       >
         {this.props.children}

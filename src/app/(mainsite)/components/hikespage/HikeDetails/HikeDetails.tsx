@@ -13,15 +13,16 @@ export default function HikeDetails(){
     interface hikePaneTypes{
         isHikePaneVisible: boolean,
         hikePaneData: hikeType,
-        setIsHikePaneVisible: any
+        setIsHikePaneVisible: any,
+        changeIsHiked: any
     }
 
-    const {isHikePaneVisible, hikePaneData, setIsHikePaneVisible}: hikePaneTypes = useContext(AppContext)
+    const {isHikePaneVisible, hikePaneData, setIsHikePaneVisible, changeIsHiked}: hikePaneTypes = useContext(AppContext)
     const [difficultyClass, setDifficultyClass] = useState(styles.easy)
     const [shaderStyles, setShaderStyles] = useState({})
     const [wrapperStyles, setWrapperStyles] = useState({})
     const [paneStyles, setPaneStyles] = useState({})
-
+    const [isHiked, setIsHiked] = useState(hikePaneData.isHiked)
 
     const swiperRef: any = useRef()
     const paneRef: any = useRef()
@@ -53,6 +54,13 @@ export default function HikeDetails(){
 
         }
     }, [isHikePaneVisible])
+
+    // UPDATE STATE SHOWN HIKEPANEDATA HOOK
+    useEffect(()=>{
+      if(hikePaneData.isHiked != isHiked){
+        setIsHiked(hikePaneData.isHiked)
+      }
+    }, [hikePaneData])
 
 
     // UPDATE HOOKS
@@ -181,11 +189,11 @@ return (
           </Swiper>
            <div className={`${styles.buttonWrapper}`}>
             <div onClick={()=>{swiperRef.current.swiper.slidePrev()}} className={styles.button}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="M16 12H8m0 0l3-3m-3 3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5"><path strokeLinejoin="round" d="M16 12H8m0 0l3-3m-3 3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg>
             </div>
             
             <div onClick={()=>{swiperRef.current.swiper.slideNext()}} className={styles.button}>
-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="M8 12h8m0 0l-3-3m3 3l-3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5"><path strokeLinejoin="round" d="M8 12h8m0 0l-3-3m3 3l-3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg>
             </div>
     </div>
 
@@ -200,9 +208,9 @@ return (
             </div>
 
             <div className={`${styles.bullet} ${styles.hikedWrapper}`}>
-                <p className={(hikePaneData.isHiked) ? styles.isHiked : styles.notHiked }>{(hikePaneData.isHiked) ? "Is Hiked" : "Not Hiked"}</p>
+                <p className={(isHiked) ? styles.isHiked : styles.notHiked }>{(isHiked) ? "Is Hiked" : "Not Hiked"}</p>
 
-                <button className={styles.markHiked}>{(hikePaneData.isHiked) ? "Mark as Not Hiked" : "Mark as Hiked"}</button>
+                <button onClick={()=>{changeIsHiked(hikePaneData.id); setIsHiked((val)=>!val)}} className={styles.markHiked}>{(isHiked) ? "Mark as Not Hiked" : "Mark as Hiked"}</button>
             </div>
 
             <div className={`${styles.bullet} ${styles.difficultyWrapper}`}>
