@@ -6,6 +6,8 @@ import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
 import L from 'leaflet';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import "../../../lib/leaflet-radar.js"
+import "../../../lib/leaflet-radar.css"
 import 'leaflet-defaulticon-compatibility';
 import styles from './hikesmap.module.css';
 import { useEffect, useRef, useState } from 'react';
@@ -146,6 +148,8 @@ const notHikedIcon = new L.Icon({
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19
         }).addTo(mapTemp);
+
+         L.control.radar({}).addTo(mapTemp);
 
         setMap(mapTemp)
 
