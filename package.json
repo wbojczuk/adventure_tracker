@@ -27,6 +27,7 @@
     "react-leaflet": "^4.2.1",
     "react-lottie-player": "^1.5.5",
     "react-multi-carousel": "^2.8.4",
+    "react-range-slider-input": "^3.2.1",
     "swiper": "^11.0.6",
     "typescript": "5.2.2"
   },

@@ -16,6 +16,8 @@ interface filterSettingsType{
     distance?: number,
     state?: string,
     isHiked?: boolean,
+    difficulty: number[],
+    length: number[]
     
 }
 
@@ -26,6 +28,8 @@ function filterHikes(map: L.Map, circle: L.Circle, setCircle:any, startMarker: L
         lat: 0,
         long: 0,
         isHiked: null!,
+        difficulty: [1, 10],
+        length: [0, 20]
 
     }
 
@@ -86,6 +90,15 @@ function filterHikes(map: L.Map, circle: L.Circle, setCircle:any, startMarker: L
         }  
     }
 
+    if(settings.difficulty[0] !== 1 || settings.difficulty[1] !== 10){
+        newData = newData.filter((data)=>{
+            return ((data.difficulty >= settings.difficulty[0]) && (data.difficulty <= settings.difficulty[1]))
+        })
+    }
+
+    newData = newData.filter((data)=>{
+        return ((data.length >= settings.length[0]) && (data.length <= settings.length[1]))
+    })
 
     if(settings.state != "undefined"){
        newData = newData.filter((data)=>{

@@ -90,6 +90,138 @@ const hikeData: hikeType[] = [
     googleMapUrl: "https://maps.app.goo.gl/jVLHJMKiy2GJxabQ9",
     photos: ["https://i.imgur.com/t1sbmnA.jpeg","https://i.imgur.com/UHvQcUD.jpeg","https://i.imgur.com/4PGaPPe.jpeg","https://i.imgur.com/8pqHh67.jpeg","https://i.imgur.com/jBQzOdD.jpeg"],
     gpx: "https://drive.usercontent.google.com/u/0/uc?id=1oBeUvXdXBb_Yoe7YgEMZSBDdOjkYfaxF&export=download"
+},{
+    length: 4.2,
+    difficulty: 5,
+    long: -83.7258965,
+    lat: 34.6372649,
+    name: "Chattahoochee National Forest: Yonah Mountain Trail, Cleveland, Georgia",
+    desc: `Few mountains in Georgia are landmarks as prominent as Yonah Mountain. Situated between the towns of Helen and Cleveland, Yonah Mountain's shape and spectacular sheer cliffs can be recognized from nearly every direction. In recent years, the trail to the top of Yonah Mountain has also become one of the most popular hikes in Georgia and for good reason: the incredible panoramic views atop Yonah's cliffs are easily among Georgia's most breathtaking. Even though the trail involves a fairly steep ascent, it does not stop up to hundreds of people from visiting the cliffs on good weekends. Unfortunately, the crowds can be a drawback of this hike, but the views are so spectacular that it's still worth it, and if you hike very early in the morning or late in the day, you might encounter relatively few people. This hike occurred on Monday, September 4th, 2017. My plan was to hike the Yonah Mountain Trail out and back to the top of Yonah Mountain, where I would make a small loop visiting all four main vistas. On my way back, I would make a slight detour to see an enormous boulder known simply as "The Boulder". 
+`,
+    isHiked: false,
+    id: 5947261483,
+    state: "GA",
+    address: "Parking lot, 283 Chambers Rd, Cleveland, GA 30528",
+    googleMapUrl: "https://maps.app.goo.gl/djQ9oXdEVftRJYKL9",
+    photos: ["https://i.imgur.com/RL7qSBL.jpeg","https://i.imgur.com/zlN5VoS.jpeg","https://i.imgur.com/71QyruQ.jpeg","https://i.imgur.com/4kHtDlq.jpeg","https://i.imgur.com/5d6PbhH.jpeg"],
+    gpx: "https://drive.usercontent.google.com/u/0/uc?id=17MZLFwCwh6irIpCyV5IUZ9dQnap4KzzF&export=download"
+},{
+    length: 5.1,
+    difficulty: 10,
+    long: -83.0539308,
+    lat: 35.0533736,
+    name: "Nantahala National Forest: Waterfalls of the Upper Whitewater River (including Sculpted Falls & Exit Falls) and Hornet Falls on Democrat Creek, Cashiers, North Carolina",
+    desc: `The Whitewater River is one of the most spectacular rivers in the Southeastern US. In its 15-mile length, the river plummets over two of the region's tallest and most breathtaking waterfalls, through a rare narrow slot canyon, and over nearly a dozen smaller waterfalls. Most folks familiar with the Whitewater River only know about Upper & Lower Whitewater Falls. This report focuses on the area immediately upstream, known as the Upper Whitewater River area, which is one of the most rugged, pristine, and gorgeous stretches of river that I've hiked. The Upper Whitewater Slot Canyon is a particularly unique location, where the mighty Whitewater River squeezes into a narrow canyon about 300 feet long and only a feet wide, lined by sheer cliffs rising dozens of feet. The river even crashes over two significant waterfalls - Sculpted Falls & Little Canyon Falls - in the canyon, as well as two others - Entrance Falls and Exit Falls - at both ends of it. While the waterfalls around the canyon are this hike's biggest highlight, many other photogenic waterfalls such as 55 MPH Falls lie between the canyon and Route 281, and the scenic Hornet Falls on Democrat Creek, a Whitewater River tributary, is a great bonus too. Seeing all of the waterfalls along the Upper Whitewater River requires a cross-country trek about as challenging as any in the North Carolina mountains, although access to a few selected waterfalls by themselves is easier. This hike occurred on Saturday, September 9th, 2017. Placing one car at NC 281 and another on Heady Mountain Road, my plan was to follow the easiest route downstream along the Whitewater River between the two parking areas, making sure to visit all waterfalls on the river as well as Hornet Falls on Democrat Creek. 
+`,
+    isHiked: false,
+    id: 9955397245,
+    state: "NC",
+    address: "3W3W+8CW Cashiers, North Carolina",
+    googleMapUrl: "https://maps.app.goo.gl/gwPMEWjdy6ceiahZ7",
+    photos: ["https://i.imgur.com/soB0maD.jpeg","https://i.imgur.com/WOeinVF.jpeg","https://i.imgur.com/JMBQyuM.jpeg","https://i.imgur.com/PUkgsrU.jpeg","https://i.imgur.com/ulSnBLO.jpeg"],
+    gpx: "https://drive.usercontent.google.com/u/0/uc?id=1yH7BxAZ3v7vkPgd9XXlFPEMoOE51xeiO&export=download"
+},{
+    length: 5.2,
+    difficulty: 3,
+    long: -82.4614592,
+    lat: 27.176149,
+    name: "Oscar Scherer State Park: Yellow Trail, Osprey, Florida",
+    desc: `Nestled near the west Florida coastline between Sarasota and Venice, the underrated Oscar Scherer State Park is a haven for folks looking for a peaceful day hike in this part of southwest Florida. The park is known best as the home of the last remaining scrub jay habitat in southwest Florida, but it also has a superb color-coded trail system that introduces hikers to South Creek and its hammocks as well as the scrub and flatwoods nearby. In particular, the diverse Yellow Trail - part of the park's North Trail System - passes through a large range of ecosystems, crossing South Creek twice, passing a beautiful lake known as Big Lake, and travelling through a large section of the scrub. Hikers will even be able to see an old railroad trestle across South Creek. Thanks to its range of scenery and points of interest, the Yellow Trail at Oscar Scherer State Park has quickly turned into one of my favorite hikes in Southwest Florida. This hike occurred on Wednesday, August 2nd, 2017. My plan was to hike the Yellow Loop Trail counter-clockwise with a short detour to the Big Lake observation platform. 
+`,
+    isHiked: false,
+    id: 7848102822,
+    state: "FL",
+    address: "6202 Oscar Scherer State Park, Nokomis, FL 34275",
+    googleMapUrl: "https://maps.app.goo.gl/dqQqeWLcxGnTj7Tm9",
+    photos: ["https://i.imgur.com/gHKlM1G.jpeg","https://i.imgur.com/R9y4SOF.jpeg","https://i.imgur.com/rap5uNY.jpeg","https://i.imgur.com/nKOipWx.jpeg","https://i.imgur.com/g8R3WN8.jpeg"],
+    gpx: "https://drive.usercontent.google.com/u/0/uc?id=11ThR88na9U6CfdquQxCW46lE4La6txil&export=download"
+},{
+    length: 11.9,
+    difficulty: 10,
+    long: -81.781402,
+    lat: 36.1199984,
+    name: " Grandfather Mountain State Park: Cragway Trail, Daniel Boone Scout Trail, and Grandfather Crest Trail to Swinging Bridge from Boone Fork Trailhead, Blowing Rock, North Carolina",
+    desc: `Anyone who lives in the Southeastern United States must have a hike along the crest of Grandfather Mountain on their bucket list. No words or pictures can accurately describe or convey the rugged splendor of the Grandfather Crest. Part of Grandfather Mountain is still operated as a private attraction that does allow public access under a hefty fee and a number of restrictions, but most of the mountain is land owned by the state of North Carolina in the form of Grandfather Mountain State Park. One of the secondary trailheads for Grandfather Mountain is actually off the Blue Ridge Parkway, from which several trails lead to Calloway Peak - the highest point on Grandfather Mountain. From there, the Grandfather Trail makes a very rugged traverse over two other peaks - Attic Window Peak and MacRae Peak - with many technical rock scrambles, cable sections, ladders, and of course, outstanding views. The 360-degree vistas on Attic Window Peak and MacRae Peak are of the type that you would find in Montana or Colorado rather than North Carolina. Eventually, the Grandfather Trail descends into the mountain's private section, reaching Linville Peak (where additional views await) and one of North Carolina's best-known tourist attractions: the Mile-High Swinging Bridge. This hike occurred on Monday, July 10th, 2017. My plan was to hike the Tanawha Trail, Nuwati Trail, Cragway Trail, and Daniel Boone Scout Trail to the summit of Calloway Peak, passing Top Crag View, Flat Rock View, Lynn Cove Viaduct View, and an old plane crash. Then, I would follow the Grandfather Trail over Attic Window Peak and MacRae Peak to Linville Peak and the Swinging Bridge, making side trips to Watauga View and Indian House Cave along the way. My return route would be similar, but I would use the Underwood Trail to bypass MacRae Peak, and I would use only the Daniel Boone Scout Trail instead of the Cragway Trail and Nuwati Trail for a slightly easier descent back to the trailhead from Calloway Peak. ​This hike was the ninth  of ten hikes that I did during a seven-day trip to the mountains of northwest North Carolina. ​
+`,
+    isHiked: false,
+    id: 1359061825,
+    state: "NC",
+    address: "100 Blue Rdg Pkwy, Blowing Rock, NC 28605",
+    googleMapUrl: "https://maps.app.goo.gl/r464NFdtRWmqQXwL7",
+    photos: ["https://i.imgur.com/G3L8iDy.jpeg","https://i.imgur.com/QIHPtiW.jpeg","https://i.imgur.com/yHVpNyD.jpeg","https://i.imgur.com/tyrd6jG.jpeg","https://i.imgur.com/AXoFVTA.jpeg"],
+    gpx: "https://drive.usercontent.google.com/u/0/uc?id=1pExoUJkUaaiJyGWZjSWK0ZH2G1Nl5YAT&export=download"
+},{
+    length: 4.9,
+    difficulty: 5,
+    long: -81.8847992,
+    lat: 35.8864893,
+    name: " Linville Gorge Wilderness: Mountains-to-Sea Trail to Table Rock, The Chimneys, The Amphitheater, and North Carolina Wall, Linville, North Carolina",
+    desc: `If I had to name the ten best hikes that I have ever done, the hike along the east rim of Linville Gorge to Table Rock and the North Carolina Wall would make the list without question. This section of the Mountains-to-Sea Trail provides access to several jaw-dropping vistas of Linville Gorge as well as its surroundings. North of the Table Rock Picnic Area is the summit of Table Rock, whose lofty peak is surrounded by cliffs hundreds of feet high and whose elongated rocky summit is home to a series of grand vistas that encompass a 360-degree view. Meanwhile, to the south, the MST first passes through a place called The Chimneys, a series of wild and jagged rock outcrops of all shapes and sizes, where the knife-edge ridge with 360-degree views forms a boundary between the rolling hills of the North Carolina Piedmont and the ruggedness of Linville Gorge. Then, if all of that wasn't enough, a pair of side trails lead to the North Carolina Wall. Rising hundreds of feet high, the North Carolina Wall is an incredible line of cliffs with continuous views over a half-mile long along the east rim of the gorge. This hike occurred on Friday, July 7th, 2017. My plan was to hike the Mountains-to-Sea Trail and Table Rock Trail from the Table Rock Picnic Area to the summit of Table Rock. On my way back, I would take a side trail to an area of cliffs known as the Devil's Cellar. Then, I would follow the Mountains-to-Sea Trail in the other direction to and through The Chimneys, before taking a side trail down to an area on the rim of the gorge known as The Amphitheater. Finally, I would follow another faint trail along the top of the NC Wall back to the MST, before retracing my steps back to the picnic area. This hike was the sixth of ten hikes that I did during a seven-day trip to the mountains of northwest North Carolina. 
+`,
+    isHiked: false,
+    id: 2036156422,
+    state: "NC",
+    address: "Parking lot, 2950 Old Table Rock Rd, Morganton, NC 28655",
+    googleMapUrl: "https://maps.app.goo.gl/1P23iGmUQjnqG4w29",
+    photos: ["https://i.imgur.com/dwTXw2X.jpeg","https://i.imgur.com/iUhpB1h.jpeg","https://i.imgur.com/e8JLbI6.jpeg","https://i.imgur.com/6NrJepC.jpeg","https://i.imgur.com/j0t3MAz.jpeg"],
+    gpx: "https://drive.usercontent.google.com/u/0/uc?id=1HJalAZCrfpv5bgeW8-b8eG2jII2qGv7r&export=download"
+},{
+    length: 4.1,
+    difficulty: 4,
+    long: -83.3526763,
+    lat: 34.958497,
+    name: " Chattahoochee National Forest: Darnell Creek Loop Trail to Ramey Creek Falls, Dillard, Georgia",
+    desc: `The Darnell Creek area is known for its abundance of notable waterfalls. All of the waterfalls on Darnell Creek and Thomas Creek - one of its two headwater tributaries - are close to Darnell Creek Road and are reached via short and easy hikes. But what about Darnell Creek's other headwater tributary, Ramey Creek? This creek, which is in no way less scenic than Thomas Creek, flows considerably further south and is reached by the Darnell Creek Trail: a well-established trail that first follows Darnell Creek and then Ramey Creek. The Darnell Creek Trail's biggest highlight is a 45-foot waterfall on Ramey Creek. Situated at the head of a narrow gorge, Ramey Creek Falls is a photogenic waterfall featuring a cliff over which the waterfall initially plunges, followed by a series of cascades down a number of rock outcrops. Taking the waterfall aside though, the Darnell Creek Trail is still a very pretty trail that passes numerous cascades and small waterfalls on Darnell Creek and Ramey Creek, in addition to a panoramic wintertime view of the grand 100-foot Big Falls on Thomas Creek in the distance across the valley. This hike occurred on Saturday, March 25th, 2017. My plan was to hike the Darnell Creek Trail to Ramey Creek Falls. From Ramey Creek Falls, I would add variety to my hike by hiking the TR 61A Loop (Darnell Creek Loop), rejoining the Darnell Creek Trail at Pine Gap Branch and retracing my steps the rest of the way to the trailhead. 
+`,
+    isHiked: false,
+    id: 9038920979,
+    state: "GA",
+    address: "XJ5W+9WW Sky Valley, Georgia",
+    googleMapUrl: "https://maps.app.goo.gl/zcd3FgLjCW8smXKbA",
+    photos: ["https://i.imgur.com/cYuAoG4.jpeg","https://i.imgur.com/puTisoY.jpeg","https://i.imgur.com/K6ov4m5.jpeg","https://i.imgur.com/1F3KFJn.jpeg"],
+    gpx: "https://www.google.com/maps/d/u/0/viewer?mid=1myyuc09fOwB-fH1wxPXg4izxnxU"
+},{
+    length: 8.9,
+    difficulty: 7,
+    long: -83.1937547,
+    lat: 34.9840652,
+    name: " Chattahoochee National Forest: Big Creek Circuit from Highway 28 to Four Waterfalls of Big Creek, Three Forks, and Singley's Falls, Clayton, Georgia",
+    desc: `Deep in Rabun County is a spot known as Three Forks, where three major mountain waterways - Big Creek, Overflow Creek, and Holcomb Creek - come together to form the West Fork of the Chattooga River. Three Forks is a unique and pristine location that can only be reached by foot, but while Three Forks alone would be a hiking destination as worthwhile as any, the three creeks that tie into Three Forks are loaded with waterfalls that come in all shapes and sizes. Perhaps the most incredible one of them all is Thunder Dome Falls on Big Creek, a monster waterfall that falls 70 feet in multiple tiers through a slot canyon and into a deep pool. It can safely be assumed that Thunder Dome Falls is among Georgia's most jaw-dropping natural sights. Thunder Dome Falls is not matched in size by the other waterfalls on this hike, but even though they're smaller, all of them are just as picturesque. This hike occurred Saturday, March 11th, 2017. My plan was to hike the Big Creek Circuit clockwise from Highway 28, hiking the Big Creek Trail first and then the Three Forks Trail. Along the way, I would make side trips to each of the four waterfalls on Big Creek, to Three Forks and the Holcomb Creek slot canyon, and to Singley's Falls on Overflow Creek. `,
+    isHiked: false,
+    id: 1702514500,
+    state: "GA",
+    address: "XRM4+JFH Pine Mountain, Georgia",
+    googleMapUrl: "https://maps.app.goo.gl/qgqn4QULuEe3z6VV9",
+    photos: ["https://i.imgur.com/qkDbpdh.jpeg","https://i.imgur.com/3zUbpU2.jpeg","https://i.imgur.com/vodo1GE.jpeg","https://i.imgur.com/nEgxIKg.jpeg","https://i.imgur.com/WfMwtD6.jpeg"],
+    gpx: "https://www.google.com/maps/d/u/0/viewer?mid=1U9UAYfMPVpEUDuSB9jbwy5nPUa4&femb=1"
+},{
+    length: 9.4,
+    difficulty: 7,
+    long: -83.9226419,
+    lat: 34.7414919,
+    name: "Appalachian Trail: Byron Herbert Reece Trailhead to Neels Gap and to Hogpen Gap via Levelland Mountain and Cowrock Mountain, Suches, Georgia",
+    desc: `One of Georgia's most scenic hikes is along the Appalachian Trail from Neels Gap to Hogpen Gap. Along this section of the AT, the famed long-distance footpath passes over several summits that offer outstanding long-range vistas. Along the way, you will first walk along the only piece of the AT that passes under a building, at the Walasi-Yi Interpretive Center. Afterwards, you will hike across Levelland Mountain, Wolf Laurel Top, Cowrock Mountain, and Wildcat Mountain, each of which has its own breathtaking view (or several). This hike occurred on Saturday, February 11th, 2017. My plan was to hike the Byron Herbert Reece Trail from US 129 to the Appalachian Trail. There, I would pick up the Appalachian Trail and follow it through Neels Gap and to Hogpen Gap. Along the way, I would make side trips to views on Levelland Mountain and Cowrock Mountain. I arranged to have two cars for this point-to-point hike: one car was placed at the Byron Herbert Reece Trailhead and another car was placed at the Hogpen Gap Trailhead.`,
+    isHiked: false,
+    id: 5413987203,
+    state: "GA",
+    address: "P3RG+HWX Owltown, Georgia",
+    googleMapUrl: "https://maps.app.goo.gl/HJkmxgJeGj5gA1Z99",
+    photos: ["https://i.imgur.com/AEw1JYo.jpeg","https://i.imgur.com/RpJFvMj.jpeg","https://i.imgur.com/g22cRG3.jpeg","https://i.imgur.com/OiKffXh.jpeg","https://i.imgur.com/8Sa83Sm.jpeg"],
+    gpx: "https://www.google.com/maps/d/u/0/viewer?mid=1tgELVGu757IayGFvG8C3_h_8Ves"
+},{
+    length: 8.6,
+    difficulty: 5,
+    long: -83.7222698,
+    lat: 34.9569811,
+    name: "﻿Southern Nantahala Wilderness: Eagle Mountain Trail, Hiawassee, Georgia",
+    desc: `The Southern Nantahala Wilderness is a large wilderness area that stretches across portions of far northeast Georgia and southwest North Carolina. The Georgia side of the wilderness has a distinct lack of trails (other than a short section of the Appalachian Trail), which is unusual for Georgia wilderness areas. However, the lack of official trails does not mean that there are less points of interest. The Georgia side of the Southern Nantahala Wilderness is home to a number of tall peaks, including Hightower Bald and Eagle Mountain. On this hike, you will follow various old logging roads to the summit of Eagle Mountain, a 4000-foot mountain where a fantastic vista awaits. In my opinion, the view from the top of Eagle Mountain is one of the best - if not the best - vista in Georgia. This hike occurred on Saturday, October 22nd, 2016. My plan was to use several old logging roads, which appear to receive horse use and ATV use, to hike out and back to the summit of Eagle Mountain from the gate at the end of the drivable portion of Bell Gap Road. `,
+    isHiked: false,
+    id: 6766504394,
+    state: "GA",
+    address: "X74H+Q3X Hiawassee, Georgia",
+    googleMapUrl: "https://maps.app.goo.gl/A4tqKp89U6AGoE8TA",
+    photos: ["https://i.imgur.com/AkOincr.jpeg","https://i.imgur.com/VFQJBx9.jpeg","https://i.imgur.com/BG3cgpx.jpeg","https://i.imgur.com/9njndCl.jpeg","https://i.imgur.com/QaQpgIY.jpeg"],
+    gpx: "https://www.google.com/maps/d/u/0/viewer?mid=1OWzamxseYr3zamrnZAesbd4OPAk&ll=34.961855887490906%2C-83.70611184742302&z=15"
 },
 ]
 

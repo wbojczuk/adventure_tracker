@@ -26,6 +26,7 @@
     position: absolute;
     top: 0.5vw;
     right: 0.5vw;
+    cursor: pointer;
 }
 
 .close svg{

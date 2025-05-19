@@ -20,6 +20,9 @@ import Loading from '../../misc/Loading/Loading';
 import Header from '../Header/Header';
 import Banner from '../Banner/Banner';
 import saveUserLatLong from '@/app/(mainsite)/controllers/userSettingsHelpers';
+import "./rangeslider.css"
+import RangeSlider from 'react-range-slider-input';
+import 'react-range-slider-input/dist/style.css';
 
 
 export default function HikesMap(){
@@ -46,6 +49,8 @@ export default function HikesMap(){
     const [locationItems, setLocationItems] = useState([<></>])
 
     const [locationName, setLocationName] = useState("Type Location")
+    const [currentDifficulty, setCurrentDifficulty] = useState([1,10])
+    const [currentLength, setCurrentLength] = useState([0, 20])
 
 
     const searchTimer: any = useRef()
@@ -189,7 +194,6 @@ const notHikedIcon = new L.Icon({
         // Add Hike Markers
         const markersTemp: any = []
         filteredHikes.forEach((hike, i)=>{
-            console.log(hike)
             const marker = L.marker([hike.lat, hike.long], {icon: (hike.isHiked) ? hikedIcon : notHikedIcon})
             markersTemp.push(marker)
             marker.addTo(map)
@@ -214,10 +218,13 @@ const notHikedIcon = new L.Icon({
                 lat: latStart,
                 long: longStart,
                 distance: distanceFilter,
-                isHiked: isHikedFilter}))
+                isHiked: isHikedFilter,
+                difficulty: currentDifficulty,
+                length: currentLength
+            }))
 
         }
-    }, [isHikedFilter, distanceFilter, latStart, longStart, newHikeData, map])
+    }, [isHikedFilter, distanceFilter, latStart, longStart, newHikeData, map, currentDifficulty, currentLength])
 
 
     // 
@@ -333,6 +340,33 @@ function parseGeoData(data: any){
     }
 }
 
+function getColor(difficulty: number): string{
+     if(difficulty! < 4){
+                // EASY
+               return "#61c74f"
+            }else if((difficulty! >= 4) && (difficulty! < 7)){
+                // Medium
+                return "#E6DC7D"
+            }else if((difficulty! >= 7) && (difficulty! < 10)){
+                // Hard
+                return "#E65A5D"
+            }else{
+                // VERY HARD
+                return "#632726"
+            }
+}
+
+function difficultyHandler(val: [number, number]){
+    setCurrentDifficulty(val)
+    const elem = document.getElementById("range-slider")
+    // @ts-ignore
+    elem!.setAttribute("style", `--min-color: ${getColor(val[0])};--max-color: ${getColor(val[1])};`)
+}
+
+function lengthHandler(val: [number, number]){
+    setCurrentLength(val)
+}
+
 return (
  <>
  {(isAppLoading) &&
@@ -375,6 +409,20 @@ return (
                 </div>
                 <button onClick={getUserLocationHandler} className={styles.getLoc}>Use Your Location</button>
             </div>
+        </div>
+    </div>
+
+    <div className="center" style={{gap: "2rem"}}>
+        <div className={styles.inputWrapper}>
+            <label htmlFor="#range-slider">Difficulty</label>
+            <RangeSlider onInput={difficultyHandler} id='range-slider' min={1} max={10} step={1} defaultValue={[1, 10]} />
+            <span>{currentDifficulty[0] +  " - " + currentDifficulty[1]}</span>
+        </div>
+
+        <div className={styles.inputWrapper}>
+            <label htmlFor="#range-slider">Length</label>
+            <RangeSlider onInput={lengthHandler} id='range-sliderr' min={0} max={50} step={1} defaultValue={[0, 20]} />
+            <span>{currentLength[0] +  " - " + currentLength[1]} Miles</span>
         </div>
     </div>
 

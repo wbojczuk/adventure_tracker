@@ -1,0 +1,54 @@
+#range-slider {
+    height: 24px;
+    border-radius: 12px;
+    background: #353644;
+    --min-color: #61c74f;
+    --max-color: #632726;
+}
+
+#range-slider .range-slider__thumb {
+    border: 6px solid #fff;
+    box-sizing: border-box;
+}
+
+#range-slider .range-slider__thumb[data-lower] {
+    background: var(--secondary-hiking);
+}
+
+#range-slider .range-slider__thumb[data-upper] {
+    background: var(--secondary-hiking);
+}
+
+#range-slider .range-slider__range {
+    background: linear-gradient(to right, var(--min-color) 0%, var(--max-color) 100%);
+    background-size: 200% 100%;
+    background-position: 50% 0;
+}
+
+#range-slider .range-slider__range[data-active],
+#range-slider .range-slider__thumb[data-active]~.range-slider__range {
+    animation: move-bg .75s infinite linear;
+}
+
+
+#range-sliderr {
+    height: 24px;
+    border-radius: 12px;
+}
+
+#range-sliderr .range-slider__thumb {
+    border: 6px solid #fff;
+    box-sizing: border-box;
+}
+
+#range-sliderr .range-slider__thumb[data-lower] {
+    background: var(--secondary-hiking);
+}
+
+#range-sliderr .range-slider__thumb[data-upper] {
+    background: var(--secondary-hiking);
+}
+
+#range-sliderr .range-slider__range {
+    background: #1dbeac;
+}

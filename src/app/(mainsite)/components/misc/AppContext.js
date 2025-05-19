@@ -119,7 +119,6 @@ class AppProvider extends Component {
       return localData
       
     })
-    console.log(mergedData)
     
   return mergedData
 }

@@ -163,6 +163,20 @@
     gap: 0.5vw;
 }
 
+.inputWrapper{
+    margin-top: 2vw;
+    padding: 1vw 2vw;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.2vw;
+    width: 15vw;
+    background-color: var(--primary-hiking);
+    color: white;
+}
+
 
 
 /* SMALL LAPTOP STYLES */
