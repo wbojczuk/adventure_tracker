@@ -28,7 +28,6 @@ export async function PUT(req: Request){
     const {getUser} = getKindeServerSession()
     const user = await getUser()
     const routeStr = `hikes`
-
     const hikingTemplate = 
        [
         {
@@ -40,7 +39,7 @@ export async function PUT(req: Request){
        const updatedHikeData = await req.json()
     
     if(typeChecker(updatedHikeData, hikingTemplate)){
-        
+       console.log(updatedHikeData)
         try{
             const client = await clientPromise
             const db = client.db("adventure_tracker")

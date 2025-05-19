@@ -109,26 +109,37 @@ class AppProvider extends Component {
     const userData = hikeUserData.sort((a, b) => a.id - b.id)
 
     const mergedData = localData.map((dataObj, i)=>{
-      let retVal
-      if(dataObj.id == userData[i].id){
-        retVal = {...dataObj, ...userData[i]}
-      }
-      return retVal
+      let localData = dataObj
+      userData.forEach((userHike, i)=>{
+        if(userHike.id == dataObj.id){
+           localData = {...dataObj, ...userData[i]}
+        }
+      })
+
+      return localData
+      
     })
+    console.log(mergedData)
     
   return mergedData
 }
 
 changeIsHiked = async (id)=>{
+  let hasHikeInUserData = false
   this.setIsSyncing(true)
 
-  const newData = ( this.state.hikeUserData != null) ? this.state.hikeUserData : hikeData.map((data) => {return({isHiked: data.isHiked, id: data.id})})
+  const newData = ( this.state.hikeUserData != null) ? this.state.hikeUserData : []
 
   newData.forEach((data, i)=>{
     if(data.id == id){
+      hasHikeInUserData = true
       data.isHiked = !data.isHiked
     }
   })
+
+  if(!hasHikeInUserData){
+    newData.push({isHiked: true, id: id})
+  }
   
   const newMergedData = this.mergeHikeData(newData)
   

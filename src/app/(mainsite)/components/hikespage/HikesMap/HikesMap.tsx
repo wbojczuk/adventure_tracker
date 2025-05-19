@@ -189,6 +189,7 @@ const notHikedIcon = new L.Icon({
         // Add Hike Markers
         const markersTemp: any = []
         filteredHikes.forEach((hike, i)=>{
+            console.log(hike)
             const marker = L.marker([hike.lat, hike.long], {icon: (hike.isHiked) ? hikedIcon : notHikedIcon})
             markersTemp.push(marker)
             marker.addTo(map)
@@ -344,7 +345,7 @@ return (
     <div className={styles.filtersWrapper}>
         <button onClick={(()=>{setIsHikedFilter(null)})} className={`${styles.filter} ${styles.activeFilter}`}>All Hikes</button>
         <button onClick={(()=>{setIsHikedFilter(false)})} className={styles.filter}>Not Hiked</button>
-        <button onClick={(()=>{setIsHikedFilter(true)})} className={styles.filter}>Is Hiked</button>
+        <button onClick={(()=>{setIsHikedFilter(true)})} className={styles.filter}>Hiked</button>
         
         <div className={styles.searchWrapper}>
             <input onInput={searchHandler} placeholder='Search'/>

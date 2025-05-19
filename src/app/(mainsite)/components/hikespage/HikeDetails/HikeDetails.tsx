@@ -208,7 +208,7 @@ return (
             </div>
 
             <div className={`${styles.bullet} ${styles.hikedWrapper}`}>
-                <p className={(isHiked) ? styles.isHiked : styles.notHiked }>{(isHiked) ? "Is Hiked" : "Not Hiked"}</p>
+                <p className={(isHiked) ? styles.isHiked : styles.notHiked }>{(isHiked) ? "Hiked" : "Not Hiked"}</p>
 
                 <button onClick={()=>{changeIsHiked(hikePaneData.id); setIsHiked((val)=>!val)}} className={styles.markHiked}>{(isHiked) ? "Mark as Not Hiked" : "Mark as Hiked"}</button>
             </div>
