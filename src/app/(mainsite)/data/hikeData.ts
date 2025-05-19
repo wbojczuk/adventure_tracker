@@ -222,6 +222,93 @@ const hikeData: hikeType[] = [
     googleMapUrl: "https://maps.app.goo.gl/A4tqKp89U6AGoE8TA",
     photos: ["https://i.imgur.com/AkOincr.jpeg","https://i.imgur.com/VFQJBx9.jpeg","https://i.imgur.com/BG3cgpx.jpeg","https://i.imgur.com/9njndCl.jpeg","https://i.imgur.com/QaQpgIY.jpeg"],
     gpx: "https://www.google.com/maps/d/u/0/viewer?mid=1OWzamxseYr3zamrnZAesbd4OPAk&ll=34.961855887490906%2C-83.70611184742302&z=15"
+},{
+    length: 4.9,
+    difficulty: 8,
+    long: -84.202289,
+    lat: 34.5579617,
+    name: "Chattahoochee National Forest: Cochrans Falls Trail, Dawsonville, Georgia",
+    desc: `What are some of the tallest waterfalls in north Georgia? You probably have the names "Amicalola Falls" and "Anna Ruby Falls" somewhere in your head. But what about Cochrans Falls? There is a possibility that you haven't heard that name before, and for good reason. This 600-foot waterfall is only around 130 feet lower than Amicalola Falls, but it is one of the most secluded waterfalls in the entire state and has nowhere near the fame of its taller neighbor to the west. On this hike, you'll follow a jeep road into the depth of the Cochrans Creek valley, before taking a rugged and steep goat path to Cochrans Falls and the head of this remote and very scenic area. This hike occurred on Saturday, May 21st, 2016. My plan was to follow a jeep road from Blackhawk Road along Cochrans Creek. At the terminus of the road, I would take an unofficial trail that would scramble along the creek and past the numerous lower cascades and drops of Cochrans Falls all the way to the uppermost and highest drop. I returned to Cochrans Falls on Saturday, June 2nd, 2018, for better photos. This trail report has been updated with new access information, and a new photo gallery can be found below. `,
+    isHiked: false,
+    id: 2153884549,
+    state: "GA",
+    address: "HQ5X+53P Amicalola, Georgia",
+    googleMapUrl: "https://maps.app.goo.gl/ee3mxTQnzwUEt7cv9",
+    photos: ["https://i.imgur.com/pksj2H3.jpeg","https://i.imgur.com/gnHipVh.jpeg","https://i.imgur.com/4ewRBF2.jpeg","https://i.imgur.com/FWTpuia.jpeg","https://i.imgur.com/4g7JbG8.jpeg"],
+    gpx: "https://www.google.com/maps/d/u/0/viewer?mid=1tE3vvWYek5bOHEWAm-Ows5sd7kQ"
+},{
+    length: 10.8,
+    difficulty: 5,
+    long: -85.4791644,
+    lat: 34.8349085,
+    name: "Cloudland Canyon State Park: Overlook Trail, Bear Creek Backcountry Trail, and Backcountry Loop﻿, Trenton, Georgia",
+    desc: `You have probably heard about Cloudland Canyon. Cloudland Canyon State Park's Sitton Gulch and Daniel Creek's waterfalls are known very well throughout the hiking community. The park's West Rim Trail is also known quite well. However, many hikers are not aware of another hiking trail in the park - and one that is much more secluded: the Bear Creek Backcountry Trail. The Bear Creek Trail passes through the Bear Creek gorge and then cruises over hills in the eastern section of the park, before reaching a fantastic vista of Cloudland Canyon. Unfortunately, as of March 21, 2016, the Bear Creek Backcountry Trail is closed east of Bear Creek indefinitely. This hike occurred on Saturday, March 19th, 2016. My plan was to check out the "tourist overlook" of Cloudland Canyon near the trailhead. From there, I would hike the Overlook Trail to the Bear Creek Backcountry Trail. Then, I would hike the entire Bear Creek Backcountry Trail - my plan was to hike the loop section counter-clockwise and then return the same way. On my way back, I planned to hike the park's Backcountry Loop clockwise. 
+`,
+    isHiked: false,
+    id: 5380893092,
+    state: "GA",
+    address: "Cloudland Canyon Park Rd, Rising Fawn, GA 30738",
+    googleMapUrl: "https://maps.app.goo.gl/6wy4wf5WEeQBtFUc7",
+    photos: ["https://i.imgur.com/gbbn1Z2.jpeg","https://i.imgur.com/Mji7TBV.jpeg","https://i.imgur.com/SPawExH.jpeg","https://i.imgur.com/Pc5wAAs.jpeg","https://i.imgur.com/ALtrCBN.jpeg"],
+    gpx: "https://www.google.com/maps/d/u/0/viewer?mid=12_F5FXbuwICK1I1FXWCbMntp2HQ"
+},{
+    length: 4.4,
+    difficulty: 3,
+    long: -82.912487,
+    lat: 35.0902405,
+    name: " Gorges State Park: Rainbow Falls Trail, Rosman﻿, North Carolina",
+    desc: `Gorges State Park is North Carolina's newest and westernmost state park, located in the area where Georgia, South Carolina, and North Carolina meet. The crown jewel of this still-developing park is the Rainbow Falls Trail, a normally easy hike that leads you to four spectacular waterfalls in the Horsepasture River gorge. On a day with 14-18 inches of fresh snow on the ground, however, the hike may not be so easy. This hike occurred on Saturday, January 23rd, 2016. My plan was to hike the Rainbow Falls Trail in the park out and back, visiting Stairstep Falls, Rainbow Falls, Turtleback Falls, and Drift Falls. I also planned to visit Raymond Fisher Pond and perhaps try some of the other short trails in the park. However, my plans were altered due to a heavy snowstorm that hit the region on the day before. All of western North Carolina got upwards of a half-foot of snow, with some areas (such as Gorges State Park) receiving as much as 18 inches. This caused Gorges State Park to be closed, and when I did this hike, I hiked the entrance road which added several miles more to my hike. Additionally, I was the first person to hike the Rainbow Falls Trail after snow, and with there being no previous footprints, it was a very slow and difficult hike. Thus, I was only able to hike the Rainbow Falls Trail to Rainbow Falls, Turtleback Falls, and Drift Falls.
+`,
+    isHiked: false,
+    id: 6837354182,
+    state: "NC",
+    address: "Gorges State Park, 976 Grassy Ridge Rd, Sapphire, NC 28774",
+    googleMapUrl: "https://maps.app.goo.gl/dULFhNPKU4HXUGGY8",
+    photos: ["https://i.imgur.com/lFLaZlT.jpeg","https://i.imgur.com/Hp2E6Fy.jpeg","https://i.imgur.com/KnmH8bY.jpeg","https://i.imgur.com/zZrI9Fi.jpeg"],
+    
+},{
+    length: 14.5,
+    difficulty: 8,
+    long: -83.3582978,
+    lat: 35.5858122,
+    name: "Great Smoky Mountains National Park: Charlie's Bunion via Kephart Prong, Cherokee, North Carolina",
+    desc: `Kephart Prong, named after Horace Kephart, is one of the major tributaries of the Oconaluftee River. The headwaters of Kephart Prong are on the south side of Mount Kephart near the Appalachian Trail. This gorgeous balloon hike takes you from the confluence of Oconaluftee River and Kephart Prong deep into the Kephart Prong drainage, and then up a climb that will get your heart pumping all the way to Charlie's Bunion, a breathtaking vista of the Tennessee side of the Smokies and into the Tennessee River Valley. Your return route takes you past more views and even a couple waterfalls. This hike occurred on Saturday, May 23rd, 2015. My plan was to hike the Kephart Prong Trail to its terminus, and then continue on the Grassy Branch Trail. From there, I would take Dry Sluice Gap Trail to the Appalachian Trail, and take the Appalachian Trail over Mount Kephart and past Charlie's Bunion. I would continue by descending down Sweat Heifer Creek Trail and finishing the hike by going back down Kephart Prong Trail. 
+`,
+    isHiked: false,
+    id: 1239669306,
+    state: "NC",
+    address: "US-441, Bryson City, NC 28713",
+    googleMapUrl: "https://maps.app.goo.gl/M3AypoFBv5Ffatpq7",
+    photos: ["https://i.imgur.com/xf14s1N.jpeg","https://i.imgur.com/Vn6fNaO.jpeg","https://i.imgur.com/Ds6GF30.jpeg","https://i.imgur.com/SEKHf8a.jpeg","https://i.imgur.com/DTVO8wp.jpeg"],
+    
+},{
+    length: 13.1,
+    difficulty: 7,
+    long: -84.665231,
+    lat: 36.5345754,
+    name: " Big South Fork National Recreation Area: Leatherwood Loop, Sunset Overlook, and Angel Falls Overlook, Oneida, Tennessee",
+    desc: `The Big South Fork of the Cumberland River is one of the biggest to bisect the Cumberland Plateau. It flows through a rugged gorge in extreme northern Tennessee and then into Kentucky, before flowing into the Cumberland River near Somerset. This hike is one of the best for your first visit to the area, as it encompasses the shear beauty of the gorge and surroundings, culminating in one of the most beautiful overlooks I have ever encountered anywhere - Angel Falls Overlook - making this one of the best hikes in Tennessee. This hike occurred on Thursday, April 16, 2015. My plan was to start my hike at the East Rim Trailhead. I'd first see East Rim Overlook and do the short hike to Sunset Overlook. And then, I would do the Leatherwood Loop and follow the John Muir Trail to Angel Falls Overlook and back. `,
+    isHiked: false,
+    id: 2004851302,
+    state: "TN",
+    address: "4564 Leatherwood Rd, Oneida, TN 37841",
+    googleMapUrl: "https://maps.app.goo.gl/C7LrysNHx18v1yrY7",
+    photos: ["https://i.imgur.com/hJl6YIK.jpeg","https://i.imgur.com/Qwh6Sop.jpeg","https://i.imgur.com/5kS32By.jpeg","https://i.imgur.com/0DC6F22.jpeg","https://i.imgur.com/UewLRlN.jpeg"],
+    
+},{
+    length: 12,
+    difficulty: 8,
+    long: -85.3122295,
+    lat: 35.8438623,
+    name: " Virgin Falls State Natural Area: Virgin Falls Trail and Caney Fork River Trail, Sparta, Tennessee",
+    desc: `The Caney Fork River's sources are in the northern Cumberland Plateau. On its way to the Tennesee River, it cuts a dramatic gorge known as "Scotts Gulf" near Sparta, TN. The Bridgestone-Firestone Centennial Wilderness protects Scotts Gulf, and an additional tract of land is Virgin Falls State Natural Area. Virgin Falls State Natural Area protects a number of features, with the key feature known as Virgin Falls. The 110-foot high cataract is very rare - it flows out of a cave and disappears int a pit in the ground that leads into an underground cave system. Additionally, Virgin Falls State Natural Area encompasses two more, smaller waterfalls, and a great overlook of Scott's Gulf itself. This hike occurred on Saturday, August 9, 2014. My plan was to do a loop hike with the Virgin Falls Trail, Caney Fork River Trail, and a Connector leading back up to Scott's Gulf Road. Also, on the way, I would check out Sheep Cave, Big Laurel Falls, Big Branch Falls, and Martha's Pretty Point Overlook. However, the plan had to be abandoned as the Caney Fork River Trail's condition deteriorated rapidly. The result was an out and back hike on Virgin Falls Trail and an extension along the Caney Fork River Trail. `,
+    isHiked: false,
+    id: 5326671938,
+    state: "TN",
+    address: "2080 Scotts Gulf Rd, Sparta, TN 38583",
+    googleMapUrl: "https://maps.app.goo.gl/rYyd6TS2FWiiVybMA",
+    photos: ["https://i.imgur.com/eu7gXy8.jpeg","https://i.imgur.com/abqZoYr.jpeg","https://i.imgur.com/qGB8cag.jpeg","https://i.imgur.com/PLAVH0e.jpeg"],
+    
 },
 ]
 
