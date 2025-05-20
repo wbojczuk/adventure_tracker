@@ -309,6 +309,20 @@ const hikeData: hikeType[] = [
     googleMapUrl: "https://maps.app.goo.gl/rYyd6TS2FWiiVybMA",
     photos: ["https://i.imgur.com/eu7gXy8.jpeg","https://i.imgur.com/abqZoYr.jpeg","https://i.imgur.com/qGB8cag.jpeg","https://i.imgur.com/PLAVH0e.jpeg"],
     
+},{
+    length: 10.4,
+    difficulty: 7,
+    long: -83.982739,
+    lat: 34.6651025,
+    name: "Blood Mountain Wilderness: Steeltrap Knob Vista Trail, Appalachian Trail to Preachers Rock, and Dockery Lake Trail to Twin Falls and Martha's Falls, Suches, Georgia",
+    desc: `Preachers Rock is a well-known destination along the Appalachian Trail on Big Cedar Mountain that features a great view of the Blood Mountain Wilderness. A couple of other trails in the area can be utilized to create a loop hike from either Chestatee Overlook (on Highway 60) or Dockery Lake, visiting one other vista as well as up to three waterfalls. The unofficial Steeltrap Knob Trail provides a useful connection between Chestatee Overlook and Woody Gap, at the same visiting a spectacular view of the Georgia Piedmont from little-known cliffs on the side of Steeltrap Knob. Meanwhile, the Dockery Lake Trail travels through the Pigeon Roost Creek Valley between Dockery Lake and the Appalachian Trail. While no waterfalls are right on the trail, visiting Martha's Falls, Twin Falls, and Dockery Lake Falls will require only short off-trail diversions. This hike occurred on Sunday, October 29th, 2017. My plan was to hike a loop from Chestatee Overlook, starting with the Steeltrap Knob Trail and stopping by the Steeltrap Knob Vista along the way. I would then take the Appalachian Trail over Big Cedar Mountain and to the Dockery Lake Trail, stopping by several views from Big Cedar Mountain along the way, including Preachers Rock. Next, I would take the Dockery Lake Trail to Dockery Lake, visiting Twin Falls, Martha's Falls, and Dockery Lake Falls along the way. I would conclude the hike with a walk up Dockery Lake Road back to Highway 60 and Chestatee Overlook.`,
+    isHiked: false,
+    id: 4854526917,
+    state: "GA",
+    address: "M288+2WR Suches, Georgia",
+    googleMapUrl: "https://maps.app.goo.gl/uZMY94otYHzRCcBy7",
+    photos: ["https://i.imgur.com/p0zU2Cr.jpeg","https://i.imgur.com/TqSEVHR.jpeg","https://i.imgur.com/sTAKpPq.jpeg","https://i.imgur.com/c2rAzLj.jpeg","https://i.imgur.com/SuMhhgo.jpeg"],
+    gpx: "https://drive.usercontent.google.com/u/0/uc?id=1fYLGt2QsnZYQOMnQnHH_N3PLFO0JR95s&export=download"
 },
 ]
 
