@@ -63,7 +63,7 @@
     border-radius: 5px;
     overflow-y: auto;
     background-color: #036459ee;
-    z-index: 999;
+    z-index: 5000;
 }
 
 .searchWrapper ul li, .searchLocWrapper ul li{

@@ -323,6 +323,77 @@ const hikeData: hikeType[] = [
     googleMapUrl: "https://maps.app.goo.gl/uZMY94otYHzRCcBy7",
     photos: ["https://i.imgur.com/p0zU2Cr.jpeg","https://i.imgur.com/TqSEVHR.jpeg","https://i.imgur.com/sTAKpPq.jpeg","https://i.imgur.com/c2rAzLj.jpeg","https://i.imgur.com/SuMhhgo.jpeg"],
     gpx: "https://drive.usercontent.google.com/u/0/uc?id=1fYLGt2QsnZYQOMnQnHH_N3PLFO0JR95s&export=download"
+},{
+    length: 1.4,
+    difficulty: 3,
+    long: -84.6725566,
+    lat: 34.8940266,
+    name: " Chattahoochee National Forest: Mill Creek Falls Trail, Chatsworth, Georgia",
+    desc: `Mill Creek is one of the most scenic small streams in the Cohutta Mountains of Northwest Georgia. In a little more than a half-mile, the creek comes over four waterfalls and many smaller cascades, and an easy unofficial trail follows the creek with access to all of the gorgeous scenery. The third and largest waterfall, in particular, is a beautiful steep slide that drops over 30 feet into a sparkling pool. The last part of the trail is a steep scramble to the base of the third falls, but it still definitely is doable to most folks and well worth the effort. This hike occurred on Saturday, September 16th, 2017. My plan was to hike the Mill Creek Trail out and back from Hickey Gap Campground past the 1st Falls and 2nd Falls to the 3rd Falls on Mill Creek. I would also make a short creek scramble to the 4th Falls from the 3rd Falls. `,
+    isHiked: false,
+    id: 1755038852,
+    state: "GA",
+    address: "4060-8078 Mill Creek Rd, Chatsworth, GA 30705",
+    googleMapUrl: "https://maps.app.goo.gl/Fy8o6UzUHxGrUVdB8",
+    photos: ["https://i.imgur.com/HwxutJ2.jpeg","https://i.imgur.com/V8xnZyP.jpeg","https://i.imgur.com/bQtCANE.jpeg","https://i.imgur.com/BNutwTX.jpeg","https://i.imgur.com/r89ATiY.jpeg"],
+    gpx: "https://drive.usercontent.google.com/u/0/uc?id=1KBv8XP2353WoCJzNzO631gYAlouRgi2g&export=download"
+},{
+    length: 12.9,
+    difficulty: 8,
+    long: -84.5267208,
+    lat: 34.8980271,
+    name: " Chattahoochee National Forest: South Fork Jacks River Loop via Benton Mackaye Trail/South Fork Trail to Shadow Falls & Flat Top Mountain and Pinhoti Trail, Blue Ridge, Georgia",
+    desc: `The Jacks River is known best for its spectacular huge waterfall Jacks River Falls, but much further upstream is another waterfall that is much smaller and less-known but still quite scenic: Shadow Falls. Located on the South Fork of the Jacks River, 20-foot Shadow Falls is easily accessible via the South Fork Trail. The waterfall is situated between two knobs near Jacks River Fields Campground in an area of the Jacks River watershed that otherwise has only gradual elevation loss along the course of the river. If you choose to turn the short waterfall hike into a much longer day hike or overnight, a few historic features around Flat Top Mountain await. In addition, you'll find plenty of solitude on the little-used trails on this hike, perhaps with an exception around Shadow Falls and Jacks River Fields. This hike occurred on Saturday, August 26th, 2017. My plan was to hike the South Fork Trail from the trailhead near Elliot Road, shortly joining the Benton Mackaye Trail, south to Shadow Falls and the small lower waterfall. From there, I'd hike the Benton Mackaye Trail to Flat Top Mountain, where there is a historic homestead and the foundations of an old fire tower. I would also make a side trip to the historic Dyer Cemetery along the way. I would then return along the BMT to FS Road 64 and follow FS 64 West past Jacks River Fields Campground to Buddy Cove Gap. I would conclude the hike by following the Pinhoti Trail northward back to South Fork Trail and Elliot Road.`,
+    isHiked: false,
+    id: 8862909032,
+    state: "GA",
+    address: "VFXF+686 Dunn, Georgia",
+    googleMapUrl: "https://maps.app.goo.gl/ho6qjRNAoYSdRora8",
+    photos: ["https://i.imgur.com/0qD96EE.jpeg","https://i.imgur.com/TmeV4Zh.jpeg","https://i.imgur.com/txjSUjg.jpeg","https://i.imgur.com/Dm3Nkci.jpeg","https://i.imgur.com/mOD9DSR.jpeg"],
+    gpx: "https://drive.usercontent.google.com/u/0/uc?id=12Gr_1_IjPX4YN5pbpY1CVeVSRaEkbq-u&export=download"
+},{
+    length: 4.9,
+    difficulty: 9,
+    long: -83.2352481,
+    lat: 34.9959539,
+    name: " Chattahoochee National Forest: Big Thunder Falls & Canyon on Clear Creek, Sky Valley, Georgia",
+    desc: `Overflow Creek in extreme northeast Rabun County is well known for its spectacular kayaking opportunities due to the creek's numerous powerful rapids and cascades.  Overflow Creek has few major tributaries until it ties into the West Fork Chattooga River at Three Forks. The largest Georgia tributary is Clear Creek, a sizable stream on its own that flows from an adjacent North Carolina valley. Between the point where it enters Georgia and where it joins Overflow Creek, Clear Creek drops down two large waterfalls - the second of which is perhaps the most unique waterfall in the state. Accurately named Big Thunder Falls, this waterfall consists of a 35-foot drop hidden in an extremely narrow canyon, and while you may hear the waterfall long before you get to the canyon, you will find it very difficult to get any decent view of the falls itself. But even if you can't put your eye on Big Thunder Falls proper, the destination - an incredible very rare slot canyon in a pristine setting - is well worth the effort required to get there. The hike to Big Thunder Falls is absolutely not for beginners, as it consists of a long cross-country trek without the benefit of trails, but experienced waterfall enthusiasts and hikers seeking adventure will enjoy it immensely. This hike occurred on Friday, August 18th, 2017. My plan was to hike along a very overgrown gated forest road from the end of Billingsley Creek Road (FS 86B) to the vicinity of Clear Creek, where I would find a way to travel upstream to Big Thunder Falls. I would also make a brief detour to see Put-In Falls on Overflow Creek near the trailhead.`,
+    isHiked: false,
+    id: 9825300995,
+    state: "GA",
+    address: "3692-5642 Forest Service 86B, Clayton, GA 30525",
+    googleMapUrl: "https://maps.app.goo.gl/1dyEe9M7eFmQcpDZ8",
+    photos: ["https://i.imgur.com/UeMU6I3.jpeg","https://i.imgur.com/bQP3xRj.jpeg","https://i.imgur.com/ViwvfZX.jpeg","https://i.imgur.com/bEyDWTV.jpeg","https://i.imgur.com/AGnTQhG.jpeg"],
+    gpx: "https://drive.usercontent.google.com/u/0/uc?id=1IYWFfkANJuwXju8Ikutueb0R50Bd7V3E&export=download"
+},{
+    length: 7.3,
+    difficulty: 5,
+    long: -84.0281773,
+    lat: 34.6753398,
+    name: " Chattahoochee National Forest: Upper Canada Creek Loop to Yukon Falls and Alberta Falls, Suches, Georgia",
+    desc: `Canada Creek is one of my favorite mountain streams in North Georgia, due to a perfect combination of beauty, remoteness, and ease of access at each of the creek's four scenic waterfalls. A network of unofficial trails used by fishers and hunters weave around Canada Creek and provide fairly easy access to each of its waterfalls. The hikes to each particular waterfall aren't too long, but seeing all of the waterfalls together will take a good part of the day. A topographic map and compass are recommended for hikers who venture into the Canada Creek area, because many disorienting trail junctions are found throughout the trail system, and some of the paths are faint. This hike occurred on Saturday, July 1st, 2017. My original plan was to hike out and back to Yukon Falls on Canada Creek from the Upper Canada Creek Trailhead. After seeing the roaring state of the Yukon Falls though, I decided to use a connector to access Alberta Falls on Canada Creek and then loop back using a couple of roads.`,
+    isHiked: false,
+    id: 8363220884,
+    state: "GA",
+    address: "MXGC+4PP Suches, Georgia",
+    googleMapUrl: "https://maps.app.goo.gl/wA3nT1wVMtqSxGDU8",
+    photos: ["https://i.imgur.com/iTMglzT.jpeg","https://i.imgur.com/arUyrJt.jpeg","https://i.imgur.com/HJGFpha.jpeg","https://i.imgur.com/ezrEekO.jpeg","https://i.imgur.com/HNyOguS.jpeg"],
+    gpx: "https://www.google.com/maps/d/u/0/viewer?mid=1RABtHJaJvmNOja6DtnPm-yXmH8o"
+},{
+    length: 0.5,
+    difficulty: 2,
+    long: -83.6435804,
+    lat: 34.9067164,
+    name: "Chattahoochee National Forest: Buckeye Cove Falls (Fall Branch Falls), Hiawassee, Georgia",
+    desc: `Buckeye Cove Falls is one of a handful of waterfalls in the Swallow Creek Wildlife Management Area near Hiawassee. About 80 feet high, this picturesque stairstep waterfall is easy to reach via a short hike, but it is located far enough in the middle of nowhere that you're not likely to find someone else at the waterfall. The lush green setting of Buckeye Cove Falls makes it appealing to waterfall enthusiasts and photographers during the warmer months. The falls is located in a very small watershed though, so it is best to visit during late spring or early summer. This hike occurred on Saturday, June 24th, 2017. My plan was to hike the unofficial path from the end of Swallow Creek Road out and back to Buckeye Cove Falls. 
+`,
+    isHiked: false,
+    id: 4599777892,
+    state: "GA",
+    address: "W944+MHM Osborn, Georgia",
+    googleMapUrl: "https://maps.app.goo.gl/3nTY2gZmR46M2Ze99",
+    photos: ["https://i.imgur.com/pPkVaHE.jpeg","https://i.imgur.com/9Y74jF6.jpeg","https://i.imgur.com/qTOwiKe.jpeg","https://i.imgur.com/Tbck11f.jpeg","https://i.imgur.com/fidcZjB.jpeg"],
+    gpx: "https://www.google.com/maps/d/u/0/viewer?mid=16ZUb_91uMk-pWuJeyCWSRGqEpRE"
 },
 ]
 
