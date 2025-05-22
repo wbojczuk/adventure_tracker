@@ -394,6 +394,48 @@ const hikeData: hikeType[] = [
     googleMapUrl: "https://maps.app.goo.gl/3nTY2gZmR46M2Ze99",
     photos: ["https://i.imgur.com/pPkVaHE.jpeg","https://i.imgur.com/9Y74jF6.jpeg","https://i.imgur.com/qTOwiKe.jpeg","https://i.imgur.com/Tbck11f.jpeg","https://i.imgur.com/fidcZjB.jpeg"],
     gpx: "https://www.google.com/maps/d/u/0/viewer?mid=16ZUb_91uMk-pWuJeyCWSRGqEpRE"
+},{
+    length: 4.7,
+    difficulty: 4,
+    long: -82.7051267,
+    lat: 36.0317484,
+    name: "Appalachian Trail: Jones Meadow to Whiterock Cliff, Blackstack Cliffs, and Big Firescald Knob Views, Greeneville, Tennessee",
+    desc: `The scenic crest of the Bald Mountains that straddles the Tennessee/North Carolina border south of Greeneville, TN, features a set of spectacular vistas in the vicinity of the Appalachian Trail. The views actually begin even before you leave your car as you arrive at the beautiful Jones Meadow with a panoramic vista of Camp Creek Bald and Blackstack Cliffs. Two excellent vistas are accessed by a very short, easy walk from the parking area: Whiterock Cliff facing south into North Carolina and Blackstack Cliffs facing north into Tennessee. The Appalachian Trail then continues onto a new section, which scrambles along the knife-edge ridge-crest for over a mile across Big Firescald Knob, affording several outstanding 360-degree panoramic vistas. On your return trip, you may choose to follow the alternate bad-weather AT route, a little-used pathway on the north flanks of Big Firescald Knob that adds variety to the hike. This hike occurred on Friday, April 27th, 2018. My plan was to hike the Appalachian Trail from Jones Meadow over Big Firescald Knob, taking side trails to Whiterock Cliff and Blackstack Cliffs along the way. Rather than retracing my steps along the Big Firescald Knob ridge-crest, I would return along the AT bad-weather bypass. This hike was the third of six hikes that I did during a four-day trip to the mountains of northeast Tennessee and northwest North Carolina.`,
+    isHiked: false,
+    id: 5404439976,
+    state: "TN",
+    address: "Greeneville, TN 37743",
+    googleMapUrl: "https://maps.app.goo.gl/rDPcJrG4UrDZZJbh6",
+    photos: ["https://i.imgur.com/TVOZrTP.jpeg","https://i.imgur.com/LXBKsTe.jpeg","https://i.imgur.com/lXdoRK2.jpeg","https://i.imgur.com/P5YpX5D.jpeg","https://i.imgur.com/ZkEnJ7B.jpeg"],
+    gpx: "https://drive.usercontent.google.com/u/0/uc?id=1LNKAU9wqUO_zO6cJeZNvLekY3i0yGetO&export=download"
+},{
+    length: 13.7,
+    difficulty: 9,
+    long: -85.5934431,
+    lat: 35.4066947,
+    name: " South Cumberland State Park: Collins Gulf Loop to Suter Falls, Horsepound Falls, Schwoon Spring, and Skinny Falls, Gruetli-Laager, Tennessee",
+    desc: `One of three rocky gorges in the Savage Gulf State Natural Area sector of South Cumberland State Park, Collins Gulf features some of the most spectacular, wild scenery on the Cumberland Plateau in Tennessee. The true star of the Collins Gulf hike is Suter Falls, a majestic 40-foot waterfall on Rocky Mountain Creek (a tributary of the Collins River) surrounded by cliffs in an awe-inspiring setting. Beside Suter Falls, the hike features as many as four other waterfalls (two are largely ephemeral). As the Collins Gulf Trail treks through the rugged gorge carved out by the Collins River, it passes a small but powerful block-type waterfall on the river called Horsepound Falls, as well as set of remarkable sinks on Collins River and Fall Creek. The second part of the hike follows the Collins Rim Trail, where the trail provides nice seasonal views into the gorge as it crosses countless tumbling streams before re-entering the gorge and crossing the Collins River on a mighty suspension bridge at a particularly gorgeous boulder-strewn section of the river. This hike occurred on Sunday, February 18th, 2018. My plan was to hike the Collins Gulf Loop clockwise from the 55th Avenue Trailhead.`,
+    isHiked: false,
+    id: 9361633644,
+    state: "TN",
+    address: "Parking lot, 55th Ave, Gruetli-Laager, TN 37339",
+    googleMapUrl: "https://maps.app.goo.gl/j2Sjct7mETcoD9Xj7",
+    photos: ["https://i.imgur.com/RYEANpf.jpeg","https://i.imgur.com/YKSEGNR.jpeg","https://i.imgur.com/Ska7m1r.jpeg","https://i.imgur.com/255UPf2.jpeg","https://i.imgur.com/n3qbcjb.jpeg"],
+    gpx: "https://drive.usercontent.google.com/u/0/uc?id=1M8NlpX_OStighx-bpKG5Xv-td0Trf3ZU&export=download"
+},{
+    length: 3.9,
+    difficulty: 3,
+    long: -83.147986,
+    lat: 35.2104096,
+    name: " Lake Glenville: High Falls (Lower) Trail North, Cashiers, North Carolina",
+    desc: `Below the Lake Glenville Dam, the West Fork of the Tuckasegee River comes over a mighty 100-foot cataract known as High Falls (locally as Cullowhee Falls). Most of the year, the dam severely restricts the watershed flow, reducing the water level at High Falls to only a few slim ribbons. But there's a few times in the year when High Falls is transformed into a monster. Several days a year, water is released from Lake Glenville down the West Fork Tuckasegee River for kayakers, and the water subsequently crashes over High Falls. Watching High Falls transform in mere seconds from a low-flow waterfall into one that's totally flooded out is an astounding experience! Two trails lead to the base of High Falls: a steep, official trail through Duke Energy land from The Pines Recreation Area by the shores of Lake Glenville to the south, and an easy, unofficial pathway through private land from Shoal Creek Mountain Road to the north. This trail report describes the Shoal Creek Mountain Road access, which the property owners have graciously opened to the public. Even though it's over twice longer, the north access is highly recommended due to the relaxing nature of the pathway, the better vantage points of High Falls, and a bonus waterfall called Rough Run Falls. This hike occurred on Saturday, April 7th, 2018. My plan was to hike out and back to High Falls from Shoal Creek Mountain Road, stopping by Rough Run Falls along the way.`,
+    isHiked: false,
+    id: 1628581856,
+    state: "NC",
+    address: "6V62+5R6 Glenville, North Carolina",
+    googleMapUrl: "https://maps.app.goo.gl/4xFnYYivcqm8EF5R7",
+    photos: ["https://i.imgur.com/Q8ZAkBx.jpeg","https://i.imgur.com/qKrVpUF.jpeg","https://i.imgur.com/C92ZVsu.jpeg","https://i.imgur.com/glbbiMH.jpeg","https://i.imgur.com/jsn7P3s.jpeg"],
+    gpx: "https://drive.usercontent.google.com/u/0/uc?id=1z62SvK1loMgDCL40zT3z11YOno1xEqWx&export=download"
 },
 ]
 
